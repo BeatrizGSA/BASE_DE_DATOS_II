@@ -1,0 +1,80 @@
+CREATE TABLE `ordenes` (
+  `idorden` int NOT NULL AUTO_INCREMENT,
+  `fechaorden` date NOT NULL,
+  `estado` varchar(120) NOT NULL,
+  PRIMARY KEY (`idorden`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci
+
+CREATE TABLE `lineadepedidos` (
+  `idlineadepedidos` int NOT NULL AUTO_INCREMENT,
+  `cantidad` int NOT NULL,
+  `precio` decimal(10,0) NOT NULL,
+  `idorden` int NOT NULL,
+  `idproducto` int NOT NULL,
+  PRIMARY KEY (`idlineadepedidos`),
+  KEY `idorden_idx` (`idorden`),
+  KEY `idproducto_idx` (`idproducto`),
+  CONSTRAINT `idorden` FOREIGN KEY (`idorden`) REFERENCES `ordenes` (`idorden`),
+  CONSTRAINT `idproducto` FOREIGN KEY (`idproducto`) REFERENCES `producto` (`idproducto`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci
+
+
+CREATE TABLE `producto` (
+  `idproducto` int NOT NULL AUTO_INCREMENT,
+  `nombre` varchar(120) NOT NULL,
+  `precio` decimal(10,0) NOT NULL,
+  `idcategoria` int NOT NULL,
+  `stock` int NOT NULL,
+  `descripcion` varchar(100) NOT NULL,
+  `idlineadeproductoscomida` int NOT NULL,
+  `idlineadeproductomuebles` int NOT NULL,
+  PRIMARY KEY (`idproducto`),
+  KEY `idcategoria_idx` (`idcategoria`),
+  KEY `idlineaproductoscomida_idx` (`idlineadeproductoscomida`),
+  KEY `idlineadeproductosmuebles_idx` (`idlineadeproductomuebles`),
+  CONSTRAINT `idcategoria` FOREIGN KEY (`idcategoria`) REFERENCES `categoria` (`idcategoria`),
+  CONSTRAINT `idlineadeproductoscomida` FOREIGN KEY (`idlineadeproductoscomida`) REFERENCES `comida` (`idcomida`),
+  CONSTRAINT `idlineadeproductosmuebles` FOREIGN KEY (`idlineadeproductomuebles`) REFERENCES `muebles` (`idmuebles`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci
+
+CREATE TABLE `categoria` (
+  `idcategoria` int NOT NULL AUTO_INCREMENT,
+  `nombre` varchar(100) NOT NULL,
+  `descripcion` varchar(120) NOT NULL,
+  PRIMARY KEY (`idcategoria`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci
+
+CREATE TABLE `lineadeproductoscomida` (
+  `idlineadeproductoscomida` int NOT NULL AUTO_INCREMENT,
+  `idcomida` int NOT NULL,
+  `idproducto` int NOT NULL,
+  PRIMARY KEY (`idlineadeproductoscomida`),
+  KEY `idcomida_idx` (`idcomida`),
+  CONSTRAINT `idcomida` FOREIGN KEY (`idcomida`) REFERENCES `comida` (`idcomida`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci
+
+
+CREATE TABLE `lineadeproductosmuebles` (
+  `idlineadeproductosmuebles` int NOT NULL AUTO_INCREMENT,
+  `idmuebles` int NOT NULL,
+  `idproducto` int NOT NULL,
+  PRIMARY KEY (`idlineadeproductosmuebles`),
+  KEY `idmuebles_idx` (`idmuebles`),
+  CONSTRAINT `idmuebles` FOREIGN KEY (`idmuebles`) REFERENCES `muebles` (`idmuebles`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci
+
+
+CREATE TABLE `comida` (
+  `idcomida` int NOT NULL AUTO_INCREMENT,
+  `nombre` varchar(100) NOT NULL,
+  `fechadeexpiracion` date NOT NULL,
+  `calorias` int NOT NULL,
+  PRIMARY KEY (`idcomida`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci
+
+CREATE TABLE `muebles` (
+  `idmuebles` int NOT NULL AUTO_INCREMENT,
+  `fechademanufactura` date NOT NULL,
+  `tipo` varchar(100) NOT NULL,
+  PRIMARY KEY (`idmuebles`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci
