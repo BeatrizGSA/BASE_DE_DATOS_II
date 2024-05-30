@@ -1,0 +1,17 @@
+INSERT INTO clientes (idclientes, nombre, apellido, telefono, email) 
+VALUES 
+('121', 'Pedro', 'Smith', '2365555', 'ps@gta.com'),
+('122', 'Maria', 'Smith', '8551111', 'smithmar@gta.com'),
+('123', 'Juan', 'Perez', '9868888', 'jper@gta.com'),
+('124', 'Edith', 'Molkgh', '9865410', 'editamol@gta.com'),
+('125', 'Jorge', 'Pru', '68889999', 'jorg@gta.com');
+
+UPDATE clientes
+SET apellido = 'Stradivarus'
+WHERE idclientes = 124;
+
+SELECT idclientes, nombre, apellido, email FROM clientes
+WHERE apellido = 'Smith';
+
+DELETE FROM clientes
+WHERE idclientes = 125;
