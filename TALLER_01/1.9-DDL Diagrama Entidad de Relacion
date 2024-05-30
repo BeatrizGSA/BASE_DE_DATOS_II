@@ -1,0 +1,15 @@
+CREATE TABLE `categoria` (
+  `idcategoria` int NOT NULL AUTO_INCREMENT,
+  `nombre` varchar(100) NOT NULL,
+  `descripcion` varchar(120) NOT NULL,
+  PRIMARY KEY (`idcategoria`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci
+
+ALTER TABLE `diaagramadeentidadderelacion`.`categoria` 
+ADD COLUMN `subcategoria` VARCHAR(45) NOT NULL AFTER `descripcion`;
+
+ALTER TABLE `diaagramadeentidadderelacion`.`categoria` 
+DROP COLUMN `subcategoria`;
+
+ALTER TABLE `diaagramadeentidadderelacion`.`categoria` 
+CHANGE COLUMN `nombre` `nombredecategoria` VARCHAR(100) NOT NULL ;
