@@ -6,8 +6,16 @@ VALUES ('002', 'arroz', 'Paquete de arroz empacado en grano de 5lb');
 
 INSERT INTO categoria (idcategoria, nombredecategoria, descripcion) 
 VALUES 
-('011', 'comida', 'Pan molde de 48 rebanadas’),
-('012', 'comida', ' Paquete de pasta corta de trigo’);
+('003', 'comida', 'Paquete de 3 lb de cafe molido'),
+('004', 'comida', 'Botella de 5 litros de aceite para freir de canola'),
+('005', 'comida', 'Leche de almendra en tetra pack 2 litros'),
+('006', 'mueble', 'Escritorio modular de oficina color negro'),
+('007', 'mueble', 'Mostrador beige para exhibicion'),
+('008', 'mueble', 'Silla de Restaurante color madera'),
+('009', 'mueble', 'Anaquel de acero inoxidable para almacenaje de alimentos'),
+('010', 'mueble', 'Escritorio con divisiones para oficina'),
+('011', 'comida', 'Pan molde de 48 rebanadas'),
+('012', 'comida', ' Paquete de pasta corta de trigo');
 
 
 UPDATE categoria
@@ -25,3 +33,6 @@ WHERE nombredecategoria = 'mueble';
 
 DELETE FROM categoria
 WHERE idcategoria = 011;
+
+DELETE FROM categoria
+WHERE idcategoria = 012;
