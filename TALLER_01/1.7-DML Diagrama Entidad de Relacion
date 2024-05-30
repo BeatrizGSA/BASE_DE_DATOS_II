@@ -1,0 +1,27 @@
+INSERT INTO categoria (idcategoria, nombredecategoria, descripcion) 
+VALUES ('001', 'hamburguesasdecarne', 'Productos congelados de hamburguesas de carne de vaca');
+
+INSERT INTO categoria (idcategoria, nombredecategoria, descripcion) 
+VALUES ('002', 'arroz', 'Paquete de arroz empacado en grano de 5lb');
+
+INSERT INTO categoria (idcategoria, nombredecategoria, descripcion) 
+VALUES 
+('011', 'comida', 'Pan molde de 48 rebanadas’),
+('012', 'comida', ' Paquete de pasta corta de trigo’);
+
+
+UPDATE categoria
+SET nombredecategoria = 'comida'
+WHERE idcategoria = 001;
+
+UPDATE categoria
+SET nombredecategoria = 'comida'
+WHERE idcategoria = 002;
+
+
+SELECT idcategoria, nombredecategoria, descripcion FROM categoria
+WHERE nombredecategoria = 'mueble';
+
+
+DELETE FROM categoria
+WHERE idcategoria = 011;
