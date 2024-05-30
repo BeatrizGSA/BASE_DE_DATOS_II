@@ -1,0 +1,77 @@
+CREATE TABLE `clientes` (
+  `idclientes` int NOT NULL AUTO_INCREMENT,
+  `nombre` varchar(100) NOT NULL,
+  `apellido` varchar(120) NOT NULL,
+  `telefono` varchar(50) NOT NULL,
+  `email` varchar(45) NOT NULL,
+  PRIMARY KEY (`idclientes`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci
+
+CREATE TABLE `videojuegos` (
+  `idvideojuegos` int NOT NULL AUTO_INCREMENT,
+  `nombre` varchar(120) NOT NULL,
+  `desarrollador` varchar(85) NOT NULL,
+  `fechadelanzamiento` date NOT NULL,
+  `precio` decimal(10,0) NOT NULL,
+  `idcategorias` int NOT NULL,
+  PRIMARY KEY (`idvideojuegos`),
+  KEY `idcategorias_idx` (`idcategorias`),
+  CONSTRAINT `idcategorias` FOREIGN KEY (`idcategorias`) REFERENCES `categorias` (`idcategorias`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci
+
+CREATE TABLE `categorias` (
+  `idcategorias` int NOT NULL AUTO_INCREMENT,
+  `nombre` varchar(120) NOT NULL,
+  `descripcion` varchar(100) NOT NULL,
+  `popularidad` decimal(10,0) NOT NULL,
+  `Disponible` tinyint(1) NOT NULL,
+  `idplataformas` int NOT NULL,
+  PRIMARY KEY (`idcategorias`),
+  KEY `idplataformas_idx` (`idplataformas`),
+  CONSTRAINT `idplataformas` FOREIGN KEY (`idplataformas`) REFERENCES `plataformas` (`idplataformas`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci
+
+CREATE TABLE `plataformas` (
+  `idplataformas` int NOT NULL AUTO_INCREMENT,
+  `nombrevideojuego` varchar(120) NOT NULL,
+  `fabricante` varchar(120) NOT NULL,
+  `descripcion` varchar(100) NOT NULL,
+  `fechadelanzamiento` date NOT NULL,
+  PRIMARY KEY (`idplataformas`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci
+
+CREATE TABLE `proveedores` (
+  `idproveedores` int NOT NULL AUTO_INCREMENT,
+  `nombreproveedor` varchar(80) NOT NULL,
+  `personadecontacto` varchar(150) NOT NULL,
+  `email` varchar(85) NOT NULL,
+  `telefono` varchar(85) NOT NULL,
+  PRIMARY KEY (`idproveedores`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci
+
+CREATE TABLE `inventario` (
+  `idinventario` int NOT NULL AUTO_INCREMENT,
+  `cantidaddisponible` int NOT NULL,
+  `precio` decimal(10,0) NOT NULL,
+  `fechadeingreso` date NOT NULL,
+  `idproveedores` int NOT NULL,
+  PRIMARY KEY (`idinventario`),
+  KEY `idproveedores_idx` (`idproveedores`),
+  CONSTRAINT `idproveedores` FOREIGN KEY (`idproveedores`) REFERENCES `proveedores` (`idproveedores`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci
+
+CREATE TABLE `ventas` (
+  `idventas` int NOT NULL AUTO_INCREMENT,
+  `fechadeventa` date NOT NULL,
+  `cantidadvendida` int NOT NULL,
+  `idclientes` int NOT NULL,
+  `idvideojuegos` int NOT NULL,
+  `idinventario` int NOT NULL,
+  PRIMARY KEY (`idventas`),
+  KEY `idclientes_idx` (`idclientes`),
+  KEY `idvideojuegos_idx` (`idvideojuegos`),
+  KEY `idinventario_idx` (`idinventario`),
+  CONSTRAINT `idclientes` FOREIGN KEY (`idclientes`) REFERENCES `clientes` (`idclientes`),
+  CONSTRAINT `idinventario` FOREIGN KEY (`idinventario`) REFERENCES `inventario` (`idinventario`),
+  CONSTRAINT `idvideojuegos` FOREIGN KEY (`idvideojuegos`) REFERENCES `videojuegos` (`idvideojuegos`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci
