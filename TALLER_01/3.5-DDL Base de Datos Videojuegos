@@ -1,0 +1,17 @@
+CREATE TABLE `videojuegos` (
+  `idvideojuegos` int NOT NULL AUTO_INCREMENT,
+  `nombre` varchar(120) NOT NULL,
+  `desarrollador` varchar(85) NOT NULL,
+  `fechadelanzamiento` date NOT NULL,
+  `precio` decimal(10,0) NOT NULL,
+  `idcategorias` int NOT NULL,
+  PRIMARY KEY (`idvideojuegos`),
+  KEY `idcategorias_idx` (`idcategorias`),
+  CONSTRAINT `idcategorias` FOREIGN KEY (`idcategorias`) REFERENCES `categorias` (`idcategorias`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci
+
+ALTER TABLE `tiendavideojuegos`.`videojuegos` 
+ADD COLUMN `preciopromocional` FLOAT NOT NULL AFTER `idcategorias`;
+
+ALTER TABLE `tiendavideojuegos`.`videojuegos` 
+DROP COLUMN `preciopromocional`;
