@@ -1,0 +1,206 @@
+Windows PowerShell
+Copyright (C) Microsoft Corporation. Todos los derechos reservados.
+
+Instale la versión más reciente de PowerShell para obtener nuevas características y mejoras. https://aka.ms/PSWindows
+
+PS C:\Users\BGSA> docker start bd;
+bd
+PS C:\Users\BGSA> docker exec -it bd bash
+root@3cea035f8c7a:/# mariadb -u root -p
+Enter password:
+ERROR 1045 (28000): Access denied for user 'root'@'localhost' (using password: YES)
+root@3cea035f8c7a:/# mariadb -u root -p
+Enter password:
+Welcome to the MariaDB monitor.  Commands end with ; or \g.
+Your MariaDB connection id is 11
+Server version: 11.4.2-MariaDB-ubu2404 mariadb.org binary distribution
+
+Copyright (c) 2000, 2018, Oracle, MariaDB Corporation Ab and others.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+MariaDB [(none)]> SHOW DATABASES;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mysql              |
+| performance_schema |
+| sys                |
+| taller_preparcial  |
+| taller_vistas      |
++--------------------+
+
+MariaDB [(none)]> CREATE DATABASE p1_taller_preparcial;
+Query OK, 1 row affected (0.007 sec)
+
+MariaDB [(none)]> USE p1_taller_preparcial;
+Database changed
+MariaDB [p1_taller_preparcial]> Create table user (
+    ->    Id_usuario INT PRIMARY KEY AUTO_INCREMENT,
+    ->    Nombre VARCHAR(50) NOT NULL,
+    ->    Apellido VARCHAR(50) NOT NULL,
+    ->    Contraseña VARCHAR(255) NOT NULL,
+    ->    Saldo DECIMAL (10,2) NOT NULL,
+    ->    Balance DECIMAL (10,2) NOT NULL
+    ->    );
+Query OK, 0 rows affected (0.073 sec)
+
+MariaDB [p1_taller_preparcial]> Create table friend (
+    ->    Id_amigo INT PRIMARY KEY AUTO_INCREMENT,
+    ->    Nombre VARCHAR (50) NOT NULL,
+    ->    Apellido VARCHAR(50)  NOT NULL,
+    ->    Id_usuario INT NOT NULL,
+    ->    Telefono VARCHAR(50) NOT NULL,
+    ->    FOREIGN KEY (Id_usuario) REFERENCES user (Id_usuario)
+    ->   );
+Query OK, 0 rows affected (0.023 sec)
+
+MariaDB [p1_taller_preparcial]> Create table user_details(
+    ->   Tipo_cuenta VARCHAR(50)  NOT NULL,
+    ->   Telefono VARCHAR(100) NOT NULL,
+    ->   Numero_cuenta INT NOT NULL,
+    ->   Id_usuario INT NOT NULL,
+    ->   Documento_aadhar VARCHAR(50) NOT NULL,
+    ->   Imagen BLOB,
+    ->  FOREIGN KEY (Id_usuario) REFERENCES user (Id_usuario)
+    ->  );
+Query OK, 0 rows affected (0.031 sec)
+
+MariaDB [p1_taller_preparcial]> Create table contact (
+    ->    Contacto_id INT PRIMARY KEY AUTO_INCREMENT,
+    ->    Id_usuario INT NOT NULL,
+    ->    Id_amigo INT NOT NULL,
+    ->    FOREIGN KEY (Id_usuario) REFERENCES user (Id_usuario),
+    ->    FOREIGN KEY (Id_amigo) REFERENCES friend (Id_amigo)
+    ->   );
+Query OK, 0 rows affected (0.029 sec)
+
+MariaDB [p1_taller_preparcial]> Create table transaction (
+    ->   Id_transaccion INT PRIMARY KEY AUTO_INCREMENT,
+    ->   Cantidad DECIMAL(10,2) NOT NULL,
+    ->   Id_usuario INT NOT NULL,
+    ->   Estado VARCHAR(50)  NOT NULL,
+    ->   Categoria VARCHAR(100) NOT NULL,
+    ->   Tipo VARCHAR(50) NOT NULL,
+    ->   Fecha DATETIME,
+    ->   FOREIGN KEY (Id_usuario) REFERENCES user (Id_usuario)
+    ->   );
+Query OK, 0 rows affected (0.019 sec)
+
+MariaDB [p1_taller_preparcial]> INSERT INTO user VALUES
+    -> ('Jose','Gutierrez','H72ML*4fr',250.67,23.65),
+    -> ('Mario','Gomez','WE.SEJ23N',300.67,2.54),
+    -> ('Melanie','Sanjur','N_23DJKG',2112.00,456.78),
+    -> ('Luis','Lopez','345Mn_*AAX',213.76,-430.98),
+    -> ('Teresa','Madrid','45edhr_O',13554.43,1789.00);
+ERROR 1136 (21S01): Column count doesn't match value count at row 1
+MariaDB [p1_taller_preparcial]> INSERT INTO user VALUES
+    -> (null,'Jose','Gutierrez','H72ML*4fr',250.67,23.65),
+    -> (null, 'Mario','Gomez','WE.SEJ23N',300.67,2.54),
+    -> (null, 'Melanie','Sanjur','N_23DJKG',2112.00,456.78),
+    -> (null, 'Luis','Lopez','345Mn_*AAX',213.76,-430.98),
+    -> (null, 'Teresa','Madrid','45edhr_O',13554.43,1789.00);
+Query OK, 5 rows affected (0.005 sec)
+Records: 5  Duplicates: 0  Warnings: 0
+
+MariaDB [p1_taller_preparcial]> INSERT INTO friend VALUES
+    -> (null,'Aliel','Alvarez',1,'6578-9807'),
+    -> (null, 'Jose','Gonzalez',3,'253-3352'),
+    -> (null, 'Amalia','Martinez',2,'6785-0096'),
+    -> (null, 'Osvaldo','Garcia',4,'342-7894'),
+    -> (null, 'Rocio','Torres',5,'6521-4432');
+Query OK, 5 rows affected (0.005 sec)
+Records: 5  Duplicates: 0  Warnings: 0
+
+MariaDB [p1_taller_preparcial]> INSERT INTO contact VALUES
+    -> (null,1,1),
+    -> (null, 2,3),
+    -> (null, 3,2),
+    -> (null, 4,4),
+    -> (null, 5,5);
+Query OK, 5 rows affected (0.003 sec)
+Records: 5  Duplicates: 0  Warnings: 0
+
+MariaDB [p1_taller_preparcial]> INSERT INTO user_details VALUES
+    -> ('Ahorro','6844-3321',567483947,1,'6-705-432',null),
+    -> ('Corriente','6909-7743',432267589,2,'8-765-432',null),
+    -> ('Ahorro','6093-4421',672834901,4,'7-890-124',null),
+    -> ('Corriente','6120-8877',219867450,3,'1-436-8876',null),
+    -> ('Corriente','6750-0909',389788212,5,'3-434-1123',null);
+Query OK, 5 rows affected (0.005 sec)
+Records: 5  Duplicates: 0  Warnings: 0
+
+MariaDB [p1_taller_preparcial]> INSERT INTO transaction VALUES
+    -> (null, 123.54,1,'Completada','Pago de factura','Salida',NOW()),
+    -> (null, 45.00,3,'Pendiente','Transaccion','Salida','2024-03-23 10:09:43'),
+    -> (null, 132.00,2,'Completada','Compra','Salida',NOW()),
+    -> (null, 254.55,4,'Cancelada','Transaccion','Entrada','2024-06-07 16:12:56'),
+    -> (null, 88.90,5,'Pendiente','Pago de factura','Salida',NOW());
+Query OK, 5 rows affected (0.004 sec)
+Records: 5  Duplicates: 0  Warnings: 0
+
+MariaDB [p1_taller_preparcial]> SHOW tables;
++--------------------------------+
+| Tables_in_p1_taller_preparcial |
++--------------------------------+
+| contact                        |
+| friend                         |
+| transaction                    |
+| user                           |
+| user_details                   |
++--------------------------------+
+MariaDB [p1_taller_preparcial]> SELECT * from contact;
++-------------+------------+----------+
+| Contacto_id | Id_usuario | Id_amigo |
++-------------+------------+----------+
+|           1 |          1 |        1 |
+|           2 |          2 |        3 |
+|           3 |          3 |        2 |
+|           4 |          4 |        4 |
+|           5 |          5 |        5 |
++-------------+------------+----------+
+5 rows in set (0.001 sec)
+MariaDB [p1_taller_preparcial]> SELECT * from friend;
++----------+---------+----------+------------+-----------+
+| Id_amigo | Nombre  | Apellido | Id_usuario | Telefono  |
++----------+---------+----------+------------+-----------+
+|        1 | Aliel   | Alvarez  |          1 | 6578-9807 |
+|        2 | Jose    | Gonzalez |          3 | 253-3352  |
+|        3 | Amalia  | Martinez |          2 | 6785-0096 |
+|        4 | Osvaldo | Garcia   |          4 | 342-7894  |
+|        5 | Rocio   | Torres   |          5 | 6521-4432 |
++----------+---------+----------+------------+-----------+
+5 rows in set (0.002 sec)
+MariaDB [p1_taller_preparcial]> SELECT * from transaction;
++----------------+----------+------------+------------+-----------------+---------+---------------------+
+| Id_transaccion | Cantidad | Id_usuario | Estado     | Categoria       | Tipo    | Fecha               |
++----------------+----------+------------+------------+-----------------+---------+---------------------+
+|              1 |   123.54 |          1 | Completada | Pago de factura | Salida  | 2024-06-20 20:24:28 |
+|              2 |    45.00 |          3 | Pendiente  | Transaccion     | Salida  | 2024-03-23 10:09:43 |
+|              3 |   132.00 |          2 | Completada | Compra          | Salida  | 2024-06-20 20:24:28 |
+|              4 |   254.55 |          4 | Cancelada  | Transaccion     | Entrada | 2024-06-07 16:12:56 |
+|              5 |    88.90 |          5 | Pendiente  | Pago de factura | Salida  | 2024-06-20 20:24:28 |
++----------------+----------+------------+------------+-----------------+---------+---------------------+
+5 rows in set (0.004 sec)
+MariaDB [p1_taller_preparcial]> SELECT * from user;
++------------+---------+-----------+-------------+----------+---------+
+| Id_usuario | Nombre  | Apellido  | Contraseña  | Saldo    | Balance |
++------------+---------+-----------+-------------+----------+---------+
+|          1 | Jose    | Gutierrez | H72ML*4fr   |   250.67 |   23.65 |
+|          2 | Mario   | Gomez     | WE.SEJ23N   |   300.67 |    2.54 |
+|          3 | Melanie | Sanjur    | N_23DJKG    |  2112.00 |  456.78 |
+|          4 | Luis    | Lopez     | 345Mn_*AAX  |   213.76 | -430.98 |
+|          5 | Teresa  | Madrid    | 45edhr_O    | 13554.43 | 1789.00 |
++------------+---------+-----------+-------------+----------+---------+
+5 rows in set (0.003 sec)
+MariaDB [p1_taller_preparcial]> SELECT * from user_details;
++-------------+-----------+---------------+------------+------------------+--------+
+| Tipo_cuenta | Telefono  | Numero_cuenta | Id_usuario | Documento_aadhar | Imagen |
++-------------+-----------+---------------+------------+------------------+--------+
+| Ahorro      | 6844-3321 |     567483947 |          1 | 6-705-432        | NULL   |
+| Corriente   | 6909-7743 |     432267589 |          2 | 8-765-432        | NULL   |
+| Ahorro      | 6093-4421 |     672834901 |          4 | 7-890-124        | NULL   |
+| Corriente   | 6120-8877 |     219867450 |          3 | 1-436-8876       | NULL   |
+| Corriente   | 6750-0909 |     389788212 |          5 | 3-434-1123       | NULL   |
++-------------+-----------+---------------+------------+------------------+--------+
