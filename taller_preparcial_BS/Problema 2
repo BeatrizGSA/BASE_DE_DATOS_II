@@ -14,6 +14,28 @@ MariaDB [taller_preparcial]> CREATE TABLE expediente (
     ->     ID_Usuario INT,
     ->     ID_Juzgado INT
     ->                );
+
+ALTER TABLE expediente
+ADD CONSTRAINT fk_aseguradora FOREIGN KEY (ID_Aseguradora) REFERENCES aseguradora(ID_Aseguradora);
+
+ALTER TABLE expediente
+ADD CONSTRAINT fk_usuario FOREIGN KEY (ID_Usuario) REFERENCES usuarios(ID_Usuario);
+
+ALTER TABLE expediente
+ADD CONSTRAINT fk_juzgado FOREIGN KEY (ID_Juzgado) REFERENCES juzgado(ID_Juzgado);
+
+ALTER TABLE login
+ADD CONSTRAINT fk_usuario_login FOREIGN KEY (ID_Usuario) REFERENCES usuarios(ID_Usuario);
+
+INSERT INTO login VALUES
+(null, 1, 'jperez', 'law#11_24', NOW(), NOW()),
+(null, 2, 'mgonzalez', 'lwhite_25#', NOW(), NOW()),
+(null, 3, 'pramirez', 'klaw_26#$', NOW(), NOW()),
+(null, 4, 'alopez', '$white25_', NOW(), NOW()),
+(null, 5, 'lmartinez', 'laworder_67#', NOW(), NOW()),
+(null, 6, 'shernandez', 'whitel$a_85#', NOW(), NOW()),
+(null, 7, 'cgarcia', 'ley23_#$96', NOW(), NOW());
+
 MariaDB [taller_preparcial]> SHOW tables;
 +-----------------------------+
 | Tables_in_taller_preparcial |
