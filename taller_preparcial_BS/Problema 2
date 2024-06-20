@@ -1,0 +1,89 @@
+MariaDB [(none)]> USE taller_preparcial;
+Database changed
+MariaDB [taller_preparcial]> CREATE TABLE expediente (
+    ->     ID_Expediente INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
+    ->     Conductor VARCHAR(100),
+    ->     ID_Aseguradora INT,
+    ->     Numero_de_Caso INT,
+    ->     Tipo_de_Proceso VARCHAR(100),
+    ->     Status INT,
+    ->     Descripcion ENUM('pendiente','en_curso','cerrado'),
+    ->     Fecha_de_audiencia DATETIME,
+    ->     createdAt DATETIME,
+    ->     updatedAt DATETIME,
+    ->     ID_Usuario INT,
+    ->     ID_Juzgado INT
+    ->                );
+MariaDB [taller_preparcial]> SHOW tables;
++-----------------------------+
+| Tables_in_taller_preparcial |
++-----------------------------+
+| aseguradora                 |
+| expediente                  |
+| juzgado                     |
+| login                       |
+| usuarios                    |
+MariaDB [taller_preparcial]> SELECT * from aseguradora;
++----------------+--------------------------+----------------------------------------------+----------+-------------------+---------------------+---------------------+
+| ID_Aseguradora | NombreCompleto           | Direccion                                    | Telefono | Email             | createdAt           | updatedAt           |
++----------------+--------------------------+----------------------------------------------+----------+-------------------+---------------------+---------------------+
+|              1 | ASSA                     | Av. Nicanor con Calle 56 Este Obarrio        |  3002772 | info@assa.com     | 2024-06-20 16:58:16 | 2024-06-20 16:58:16 |
+|              2 | ANCON                    | Costa del Este, Ave. Centenario, Paitilla    |  2108700 | info@ancon.com    | 2024-06-20 16:58:16 | 2024-06-20 16:58:16 |
+|              3 | SURA                     | Plaza Marbella, Calle Aquilino de la Guardia |  8008888 | info@sura.com     | 2024-06-20 16:58:16 | 2024-06-20 16:58:16 |
+|              4 | INTERNACIONAL DE SEGUROS | Calle 50, Edif. Plaza Credicorp Bank         |  2064000 | info@interseg.com | 2024-06-20 16:58:16 | 2024-06-20 16:58:16 |
+|              5 | MAPFRE                   | Costa del Este,Diagonal al Business Park     |  3789800 | info@mapfre.com   | 2024-06-20 16:58:16 | 2024-06-20 16:58:16 |
+|              6 | NACIONAL DE SEGUROS      | Signature Point PB, Vía España               |  3006855 | info@nacional.com | 2024-06-20 16:58:16 | 2024-06-20 16:58:16 |
+|              7 | LA REGIONAL DE SEGUROS   | Torre Banco Panamá, Costa del Este           |  2820500 | info@regional.com | 2024-06-20 16:58:16 | 2024-06-20 16:58:16 |
++-----------
+MariaDB [taller_preparcial]> SELECT * from expediente;
++---------------+----------------------------+----------------+----------------+--------------------------+--------+-------------+---------------------+---------------------+---------------------+------------+------------+
+| ID_Expediente | Conductor                  | ID_Aseguradora | Numero_de_Caso | Tipo_de_Proceso          | Status | Descripcion | Fecha_de_audiencia  | createdAt           | updatedAt           | ID_Usuario | ID_Juzgado |
++---------------+----------------------------+----------------+----------------+--------------------------+--------+-------------+---------------------+---------------------+---------------------+------------+------------+
+|             8 | Conductor 1 Pedro Sucasa   |              1 |            101 | Responsabilidad Civil    |      1 | pendiente   | 2024-07-01 10:00:00 | 2024-06-20 18:38:23 | 2024-06-20 18:38:23 |          1 |          1 |
+|             9 | Conductor 2  Pablo Almeria |              2 |            102 | Reclamaciones de Seguros |      2 | en_curso    | 2024-07-02 10:00:00 | 2024-06-20 18:38:23 | 2024-06-20 18:38:23 |          2 |          2 |
+|            10 | Conductor 3 Juan Piedro    |              3 |            103 | Litigio Seguro Comercial |      3 | cerrado     | 2024-07-03 10:00:00 | 2024-06-20 18:38:23 | 2024-06-20 18:38:23 |          3 |          3 |
+|            11 | Conductor 4 Ernesto Piter  |              4 |            104 | Responsabilidad Civil    |      1 | pendiente   | 2024-07-04 10:00:00 | 2024-06-20 18:38:23 | 2024-06-20 18:38:23 |          4 |          4 |
+|            12 | Conductor 5 Roberto Palma  |              5 |            105 | Litigio Seguro Comercial |      2 | en_curso    | 2024-07-05 10:00:00 | 2024-06-20 18:38:23 | 2024-06-20 18:38:23 |          5 |          5 |
+|            13 | Conductor 6 Gabriel Piter  |              6 |            106 | Reclamaciones de Seguros |      3 | cerrado     | 2024-07-06 10:00:00 | 2024-06-20 18:38:23 | 2024-06-20 18:38:23 |          6 |          6 |
+|            14 | Conductor 7 Jose Palm      |              7 |            107 | Responsabilidad Civil    |      1 | pendiente   | 2024-07-07 10:00:00 | 2024-06-20 18:38:23 | 2024-06-20 18:38:23 |          7 |          7 |
++---------------+----------------------------+----------------+----------------+--------------------------+--------+-------------+---------------------+---------------------+---------------------+------------+------------+
+
+MariaDB [taller_preparcial]> SELECT * from juzgado;
++------------+-------------+-------------+----------+-------------------+----------------+---------------------+---------------------+
+| ID_Juzgado | Nombre      | Direccion   | Telefono | Email             | Jurisdiccion   | createdAt           | updatedAt           |
++------------+-------------+-------------+----------+-------------------+----------------+---------------------+---------------------+
+|          1 | Juzgado 1ro | Santa Ana   |  2534567 | info@juzgado1.com | Jurisdiccion 1 | 2024-06-20 18:26:43 | 2024-06-20 18:26:43 |
+|          2 | Juzgado 2do | Obarrio     |  2345678 | info@juzgado2.com | Jurisdiccion 2 | 2024-06-20 18:26:43 | 2024-06-20 18:26:43 |
+|          3 | Juzgado 3ro | Villa Lucre |  3456789 | info@juzgado3.com | Jurisdiccion 3 | 2024-06-20 18:26:43 | 2024-06-20 18:26:43 |
+|          4 | Juzgado 4to | Veranillo   |  4567890 | info@juzgado4.com | Jurisdiccion 4 | 2024-06-20 18:26:43 | 2024-06-20 18:26:43 |
+|          5 | Juzgado 5to | Ancon       |  5678901 | info@juzgado5.com | Jurisdiccion 5 | 2024-06-20 18:26:43 | 2024-06-20 18:26:43 |
+|          6 | Juzgado 6to | Pedregal    |  6789012 | info@juzgado6.com | Jurisdiccion 6 | 2024-06-20 18:26:43 | 2024-06-20 18:26:43 |
+|          7 | Juzgado 7mo | Albrook     |  7890123 | info@juzgado7.com | Jurisdiccion 7 | 2024-06-20 18:26:43 | 2024-06-20 18:26:43 |
++------------+-------------+-------------+----------+-------------------+----------------+---------------------+---------------------+
+
+MariaDB [taller_preparcial]> SELECT * from login;
++----------+------------+------------+--------------+---------------------+---------------------+
+| ID_Login | ID_Usuario | Usuario    | Contraseña   | createdAt           | updatedAt           |
++----------+------------+------------+--------------+---------------------+---------------------+
+|        1 |          1 | jperez     | law#11_24    | 2024-06-20 19:07:01 | 2024-06-20 19:07:01 |
+|        2 |          2 | mgonzalez  | lwhite_25#   | 2024-06-20 19:07:01 | 2024-06-20 19:07:01 |
+|        3 |          3 | pramirez   | klaw_26#$    | 2024-06-20 19:07:01 | 2024-06-20 19:07:01 |
+|        4 |          4 | alopez     | $white25_    | 2024-06-20 19:07:01 | 2024-06-20 19:07:01 |
+|        5 |          5 | lmartinez  | laworder_67# | 2024-06-20 19:07:01 | 2024-06-20 19:07:01 |
+|        6 |          6 | shernandez | whitel$a_85# | 2024-06-20 19:07:01 | 2024-06-20 19:07:01 |
+|        7 |          7 | cgarcia    | ley23_#$96   | 2024-06-20 19:07:01 | 2024-06-20 19:07:01 |
++----------+------------+------------+--------------+---------------------+---------------------+
+
+MariaDB [taller_preparcial]> SELECT * from usuarios;
++------------+--------+-----------+------------------------------+----------+------------------+------------+---------------------+---------------------+
+| ID_Usuario | Nombre | Apellido  | Email                        | Telefono | Direccion        | Cargo      | createdAt           | updatedAt           |
++------------+--------+-----------+------------------------------+----------+------------------+------------+---------------------+---------------------+
+|          1 | Juan   | Perez     | juan.perez@whitelaw.com      |  2134567 | Casa Matriz      | Abogado    | 2024-06-20 18:17:39 | 2024-06-20 18:17:39 |
+|          2 | Maria  | Gonzalez  | maria.gonzalez@whitelaw.com  |  2345678 | Oficina Marbella | Asistente  | 2024-06-20 18:17:39 | 2024-06-20 18:17:39 |
+|          3 | Pedro  | Ramirez   | pedro.ramirez@whitelaw.com   |  3456789 | Casa Matriz      | Secretario | 2024-06-20 18:17:39 | 2024-06-20 18:17:39 |
+|          4 | Ana    | Lopez     | ana.lopez@whitelaw.com       |  4567890 | Oficina Marbella | Abogado    | 2024-06-20 18:17:39 | 2024-06-20 18:17:39 |
+|          5 | Luis   | Martinez  | luis.martinez@whitelaw.com   |  5678901 | Casa Matriz      | Asistente  | 2024-06-20 18:17:39 | 2024-06-20 18:17:39 |
+|          6 | Sofia  | Hernandez | sofia.hernandez@whitelaw.com |  6789012 | Oficina Paitilla | Secretario | 2024-06-20 18:17:39 | 2024-06-20 18:17:39 |
+|          7 | Carlos | Garcia    | carlos.garcia@whitelaw.com   |  7890123 | Oficina Paitilla | Abogado    | 2024-06-20 18:17:39 | 2024-06-20 18:17:39 |
++------------+--------+-----------+------------------------------+----------+------------------+------------+---------------------+---------------------+
+
