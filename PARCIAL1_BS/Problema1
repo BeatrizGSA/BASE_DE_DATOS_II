@@ -166,3 +166,13 @@ MariaDB [Parcial1_problema1]> show tables;
 | productos                    |
 +------------------------------+
 8 rows in set (0.003 sec)
+
+MariaDB [Parcial1_problema1]> ALTER TABLE oficinas DROP COLUMN zona;
+Query OK, 0 rows affected (0.032 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+
+MariaDB [Parcial1_problema1]> ALTER TABLE oficinas
+    ->     ADD zona ENUM('ZonaNorte', 'ZonaSur', 'ZonaEste', 'ZonaOeste');
+Query OK, 0 rows affected (0.018 sec)
+Records: 0  Duplicates: 0  Warnings: 0
