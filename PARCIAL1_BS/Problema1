@@ -176,3 +176,28 @@ MariaDB [Parcial1_problema1]> ALTER TABLE oficinas
     ->     ADD zona ENUM('ZonaNorte', 'ZonaSur', 'ZonaEste', 'ZonaOeste');
 Query OK, 0 rows affected (0.018 sec)
 Records: 0  Duplicates: 0  Warnings: 0
+
+MariaDB [Parcial1_problema1]> INSERT INTO oficinas VALUES
+    -> ('OF001', 'Panamá', '+507 2134567', 'Las Cumbres', 'Administrativo', 'Panamá', '12345', 'América', true, 'ZonaNorte'),
+    -> ('OF002', 'La Chorrera', '+507 7654321', 'Avenida Central', 'Operaciones', 'Panamá', '54321', 'América', false, 'ZonaSur'),
+    -> ('OF003', 'Arraiján', '+507 9876543', 'Calle 10', 'Ventas', 'Panamá', '67890', 'América', true, 'ZonaEste'),
+    -> ('OF004', 'Panamá', '+507 2468013', 'Avenida Principal', 'Logística', 'Panamá', '13579', 'América', true, 'ZonaOeste'),
+    -> ('OF005', 'Chame', '+507 2122334', 'Avenida Norte', 'Recursos Humanos', 'Panamá', '24680', 'América', true, 'ZonaNorte'),
+    -> ('OF006', 'San Carlos', '+507 5566778', 'Calle Central', 'Contabilidad', 'Panamá', '98765', 'América', true, 'ZonaSur'),
+    -> ('OF007', 'Capira', '+507 3344556', 'Avenida Sur', 'Tecnología', 'Panamá', '54321', 'América', false, 'ZonaEste');
+Query OK, 7 rows affected (0.003 sec)
+Records: 7  Duplicates: 0  Warnings: 0
+
+MariaDB [Parcial1_problema1]> SELECT * from oficinas;
++------------+-------------+--------------+-------------------+------------------+---------+--------------+------------+-----------+-----------+
+| id_oficina | ciudad      | telefono     | direccion         | departamento     | pais    | codigopostal | continente | operativa | zona      |
++------------+-------------+--------------+-------------------+------------------+---------+--------------+------------+-----------+-----------+
+| OF001      | Panamá      | +507 2134567 | Las Cumbres       | Administrativo   | Panamá  | 12345        | América    |         1 | ZonaNorte |
+| OF002      | La Chorrera | +507 7654321 | Avenida Central   | Operaciones      | Panamá  | 54321        | América    |         0 | ZonaSur   |
+| OF003      | Arraiján    | +507 9876543 | Calle 10          | Ventas           | Panamá  | 67890        | América    |         1 | ZonaEste  |
+| OF004      | Panamá      | +507 2468013 | Avenida Principal | Logística        | Panamá  | 13579        | América    |         1 | ZonaOeste |
+| OF005      | Chame       | +507 2122334 | Avenida Norte     | Recursos Humanos | Panamá  | 24680        | América    |         1 | ZonaNorte |
+| OF006      | San Carlos  | +507 5566778 | Calle Central     | Contabilidad     | Panamá  | 98765        | América    |         1 | ZonaSur   |
+| OF007      | Capira      | +507 3344556 | Avenida Sur       | Tecnología       | Panamá  | 54321        | América    |         0 | ZonaEste  |
++------------+-------------+--------------+-------------------+------------------+---------+--------------+------------+-----------+-----------+
+7 rows in set (0.001 sec)
