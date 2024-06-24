@@ -187,32 +187,32 @@ Query OK, 25 rows affected (0.005 sec)
 Records: 25  Duplicates: 0  Warnings: 0
 
 MariaDB [Parcial1_problema2]> INSERT INTO autenticacion VALUES
-    -> (null, 27, 'fdrake', 'y3s02569tlP65896', 'Mozilla Firefox', 'TK9862AZSS555588'),
-    -> (null, 28, 'hmorgan', 'jH3f0256msP65896', 'Brave', 'TK2871BQWW374611'),
-    -> (null, 29, 'eteach', 'kY2d0258thP65896', 'Google Chrome', 'TK4352CXVV843782'),
-    -> (null, 30, 'wkidd', 'fL8s0259plP65896', 'Mozilla Firefox', 'TK1983DZXX932665'),
-    -> (null, 31, 'elow', 'mQ4z0257kjP65896', 'Brave', 'TK5264EZZY294557'),
-    -> (null, 32, 'cvane', 'gA1x0254npP65896', 'Google Chrome', 'TK6475FYWW736981'),
-    -> (null, 33, 'sbellamy', 'rW3y0253thP65896', 'Mozilla Firefox', 'TK7586GZYY875422'),
-    -> (null, 34, 'sbonnet', 'pJ6b0251wlP65896', 'Brave', 'TK8697HZXX934213'),
-    -> (null, 35, 'bhornigold', 'qL7e0256drP65896', 'Google Chrome', 'TK9708IZWW465199'),
-    -> (null, 36, 'jrackham', 'bN5c0252mlP65896', 'Mozilla Firefox', 'TK0819JZZY592348'),
-    -> (null, 37, 'abonny', 'y3s02569tlP65896', 'Brave', 'TK1920KXWW384576'),
-    -> (null, 38, 'mread', 'jH3f0256msP65896', 'Google Chrome', 'TK3031LYZZ823655'),
-    -> (null, 39, 'jhawkins', 'kY2d0258thP65896', 'Mozilla Firefox', 'TK4142MXWW694728'),
-    -> (null, 40, 'broberts', 'fL8s0259plP65896', 'Brave', 'TK5253NZYY983547'),
-    -> (null, 41, 'glowther', 'mQ4z0257kjP65896', 'Google Chrome', 'TK6364OXZZ584231'),
-    -> (null, 42, 'ttew', 'gA1x0254npP65896', 'Mozilla Firefox', 'TK7475PYWW762398'),
-    -> (null, 43, 'hdavis', 'rW3y0253thP65896', 'Brave', 'TK8586QZYY495277'),
-    -> (null, 44, 'ldegraaf', 'pJ6b0251wlP65896', 'Google Chrome', 'TK9697RXZZ983612'),
-    -> (null, 45, 'flolonnais', 'qL7e0256drP65896', 'Mozilla Firefox', 'TK0818SZWW576491'),
-    -> (null, 46, 'rbrasiliano', 'bN5c0252mlP65896', 'Brave', 'TK1929TZYY293576'),
-    -> (null, 47, 'havery', 'y3s02569tlP65896', 'Google Chrome', 'TK3030UXZZ781942'),
-    -> (null, 48, 'cmyngs', 'jH3f0256msP65896', 'Mozilla Firefox', 'TK4141VZWW943587'),
-    -> (null, 49, 'tanstis', 'kY2d0258thP65896', 'Brave', 'TK5252WXYY674839'),
-    -> (null, 50, 'jnau', 'fL8s0259plP65896', 'Google Chrome', 'TK6363YZWW865472'),
-    -> (null, 51, 'pgilbert', 'mQ4z0257kjP65896', 'Mozilla Firefox', 'TK7474ZZYY235611');
-Query OK, 25 rows affected (0.012 sec)
+    -> (null, 27, 'fdrake', 'y3s02569tlP65896', 'Mozilla Firefox', 'TK9862AZSS555588', '2023-06-24'),
+    -> (null, 28, 'hmorgan', 'jH3f0256msP65896', 'Brave', 'TK2871BQWW374611', '2023-06-24'),
+    -> (null, 29, 'eteach', 'kY2d0258thP65896', 'Google Chrome', 'TK4352CXVV843782', '2023-06-24'),
+    -> (null, 30, 'wkidd', 'fL8s0259plP65896', 'Mozilla Firefox', 'TK1983DZXX932665', '2023-06-24'),
+    -> (null, 31, 'elow', 'mQ4z0257kjP65896', 'Brave', 'TK5264EZZY294557', '2023-06-24'),
+    -> (null, 32, 'cvane', 'gA1x0254npP65896', 'Google Chrome', 'TK6475FYWW736981', '2023-06-24'),
+    -> (null, 33, 'sbellamy', 'rW3y0253thP65896', 'Mozilla Firefox', 'TK7586GZYY875422', '2023-06-24'),
+    -> (null, 34, 'sbonnet', 'pJ6b0251wlP65896', 'Brave', 'TK8697HZXX934213', '2023-06-24'),
+    -> (null, 35, 'bhornigold', 'qL7e0256drP65896', 'Google Chrome', 'TK9708IZWW465199', '2023-06-24'),
+    -> (null, 36, 'jrackham', 'bN5c0252mlP65896', 'Mozilla Firefox', 'TK0819JZZY592348', '2023-06-24'),
+    -> (null, 37, 'abonny', 'y3s02569tlP65896', 'Brave', 'TK1920KXWW384576', '2023-06-24'),
+    -> (null, 38, 'mread', 'jH3f0256msP65896', 'Google Chrome', 'TK3031LYZZ823655', '2023-06-24'),
+    -> (null, 39, 'jhawkins', 'kY2d0258thP65896', 'Mozilla Firefox', 'TK4142MXWW694728', '2023-06-24'),
+    -> (null, 40, 'broberts', 'fL8s0259plP65896', 'Brave', 'TK5253NZYY983547', '2023-06-24'),
+    -> (null, 41, 'glowther', 'mQ4z0257kjP65896', 'Google Chrome', 'TK6364OXZZ584231', '2023-06-24'),
+    -> (null, 42, 'ttew', 'gA1x0254npP65896', 'Mozilla Firefox', 'TK7475PYWW762398', '2023-06-24'),
+    -> (null, 43, 'hdavis', 'rW3y0253thP65896', 'Brave', 'TK8586QZYY495277', '2023-06-24'),
+    -> (null, 44, 'ldegraaf', 'pJ6b0251wlP65896', 'Google Chrome', 'TK9697RXZZ983612', '2023-06-24'),
+    -> (null, 45, 'flolonnais', 'qL7e0256drP65896', 'Mozilla Firefox', 'TK0818SZWW576491', '2023-06-24'),
+    -> (null, 46, 'rbrasiliano', 'bN5c0252mlP65896', 'Brave', 'TK1929TZYY293576', '2023-06-24'),
+    -> (null, 47, 'havery', 'y3s02569tlP65896', 'Google Chrome', 'TK3030UXZZ781942', '2023-06-24'),
+    -> (null, 48, 'cmyngs', 'jH3f0256msP65896', 'Mozilla Firefox', 'TK4141VZWW943587', '2023-06-24'),
+    -> (null, 49, 'tanstis', 'kY2d0258thP65896', 'Brave', 'TK5252WXYY674839', '2023-06-24'),
+    -> (null, 50, 'jnau', 'fL8s0259plP65896', 'Google Chrome', 'TK6363YZWW865472', '2023-06-24'),
+    -> (null, 51, 'pgilbert', 'mQ4z0257kjP65896', 'Mozilla Firefox', 'TK7474ZZYY235611', '2023-06-24');
+Query OK, 25 rows affected (0.003 sec)
 Records: 25  Duplicates: 0  Warnings: 0
 
 MariaDB [Parcial1_problema2]> INSERT INTO reporte VALUES
