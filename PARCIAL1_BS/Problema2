@@ -153,3 +153,32 @@ MariaDB [Parcial1_problema2]> INSERT INTO pago VALUES
     -> (null, 51, 'dinners club international', '30000000000008', 'Pedro Gilbert', 777, '2025-12-01', 'dinners_club.jpg');
 Query OK, 25 rows affected (0.003 sec)
 Records: 25  Duplicates: 0  Warnings: 0
+
+MariaDB [Parcial1_problema2]> INSERT INTO tipos_de_pruebas VALUES
+    -> (null, 'TPR-001', 'Escaneo de Puertos', 'Identificación de los puertos abiertos en un sistema para evaluar su seguridad.', '2023-01-01', 'activo', 'Network Penetration Testing'),
+    -> (null, 'TPR-002', 'Identificación de Servicios', 'Recolección de información sobre los servicios en ejecución en un sistema objetivo.', '2023-01-02', 'activo', 'Network Penetration Testing'),
+    -> (null, 'TPR-003', 'Enumeración de Usuarios y Recursos', 'Obtención de información detallada sobre usuarios y recursos en una red.', '2023-01-03', 'activo', 'Network Penetration Testing'),
+    -> (null, 'TPR-004', 'Detección de Firewalls y Filtros', 'Identificación de dispositivos de seguridad como firewalls y filtros activos en la red.', '2023-01-04', 'activo', 'Network Penetration Testing'),
+    -> (null, 'TPR-005', 'Exploración de Vulnerabilidades en Protocolos', 'Análisis de vulnerabilidades específicas en protocolos de red utilizados', '2023-01-05', 'activo', 'Network Penetration Testing'),
+    -> (null, 'TPR-006', 'Inyección SQL', 'Prueba para detectar vulnerabilidades de inyección SQL en aplicaciones web.', '2023-01-06', 'activo', 'Web Application Penetration Testing'),
+    -> (null, 'TPR-007', 'Cross-Site Scripting (XSS)', 'Identificación de vulnerabilidades XSS que podrían ser explotadas para ejecutar scripts maliciosos.', '2023-01-07', 'activo', 'Web Application Penetration Testing'),
+    -> (null, 'TPR-008', 'Cross-Site Request Forgery (CSRF)', 'Evaluación de la capacidad de manipulación de solicitudes CSRF en aplicaciones web.', '2023-01-08', 'activo', 'Web Application Penetration Testing'),
+    -> (null, 'TPR-009', 'Vulnerabilidades en la Autenticación y Sesiones', 'Identificación de debilidades en los mecanismos de autenticación y gestión de sesiones.', '2023-01-09', 'activo', 'Web Application Penetration Testing'),
+    -> (null, 'TPR-010', 'Exploración de Archivos y Directorios', 'Búsqueda de archivos y directorios ocultos o sensibles en aplicaciones web.', '2023-01-10', 'activo', 'Web Application Penetration Testing'),
+    -> (null, 'TPR-011', 'Análisis de Almacenamiento Local', 'Revisión de almacenamiento local en aplicaciones móviles en busca de datos sensibles.', '2023-01-11', 'activo', 'Mobile Application Penetration Testing'),
+    -> (null, 'TPR-012', 'Intercepción de Tráfico', 'Monitoreo y análisis del tráfico de red generado por aplicaciones móviles para identificar vulnerabilidades.', '2023-01-12', 'activo', 'Mobile Application Penetration Testing'),
+    -> (null, 'TPR-013', 'Reversión de Ingeniería de Aplicaciones', 'Análisis del código de aplicaciones móviles para descubrir lógica de negocio y vulnerabilidades.', '2023-01-13', 'activo', 'Mobile Application Penetration Testing'),
+    -> (null, 'TPR-014', 'Análisis de Autenticación y Autorización', 'Evaluación de la seguridad de los mecanismos de autenticación y autorización en aplicaciones móviles.', '2023-01-14', 'activo', 'Mobile Application Penetration Testing'),
+    -> (null, 'TPR-015', 'Manipulación de Datos Sensibles', 'Prueba para verificar la protección adecuada de datos sensibles en aplicaciones móviles.', '2023-01-15', 'activo', 'Mobile Application Penetration Testing'),
+    -> (null, 'TPR-016', 'Análisis de Configuración de Punto de Acceso', 'Revisión de la configuración de puntos de acceso inalámbricos para detectar debilidades de seguridad.', '2023-01-16', 'activo', 'Wireless Penetration Testing'),
+    -> (null, 'TPR-017', 'Ataques de Fuerza Bruta', 'Prueba de ataques de fuerza bruta contra puntos de acceso inalámbricos para evaluar su resistencia.', '2023-01-17', 'activo', 'Wireless Penetration Testing'),
+    -> (null, 'TPR-018', 'Sniffing de Tráfico', 'Monitoreo pasivo del tráfico inalámbrico para capturar información sensible.', '2023-01-18', 'activo', 'Wireless Penetration Testing'),
+    -> (null, 'TPR-019', 'Ataques de Desautenticación', 'Envío de paquetes de desautenticación para interrumpir la conexión entre dispositivos inalámbricos.', '2023-01-19', 'activo', 'Wireless Penetration Testing'),
+    -> (null, 'TPR-020', 'Evaluación de Seguridad de Protocolos Inalámbricos', 'Revisión de la seguridad de los protocolos inalámbricos utilizados en una red.', '2023-01-20', 'activo', 'Wireless Penetration Testing'),
+    -> (null, 'TPR-021', 'Phishing y Spear Phishing', 'Creación y envío de correos electrónicos falsos para engañar a los usuarios y obtener información confidencial.', '2023-01-21', 'activo', 'Social Engineering Penetration Testing'),
+    -> (null, 'TPR-022', 'Reconocimiento', 'Actividades iniciales para obtener información sobre el objetivo y planificar el ataque.', '2023-01-31', 'activo', 'Red Team Penetration Testing'),
+    -> (null, 'TPR-023', 'Análisis de Vulnerabilidades', 'Identificación y evaluación de vulnerabilidades en sistemas y redes.', '2023-02-01', 'activo', 'Red Team Penetration Testing'),
+    -> (null, 'TPR-024', 'Explotación', 'Utilización de vulnerabilidades identificadas para comprometer sistemas o redes.', '2023-02-02', 'activo', 'Red Team Penetration Testing'),
+    -> (null, 'TPR-025', 'Escalar Privilegios o Post-Explotación', 'Técnicas para aumentar los privilegios obtenidos después de comprometer un sistema.', '2023-02-03', 'activo', 'Red Team Penetration Testing');
+Query OK, 25 rows affected (0.005 sec)
+Records: 25  Duplicates: 0  Warnings: 0
