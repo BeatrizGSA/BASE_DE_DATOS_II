@@ -98,15 +98,7 @@ MariaDB [Parcial1_problema2]> INSERT INTO usuario VALUES
     -> (null, 'Henry', 'Morgan', 'hmorgan', 'TK2871BQWW374611', 'jH3f0256msP65896', 'administradores', 'admin', 'Coclé', 'M', 'Casado', 'privada', 'Penonome, calle 34'),
     -> (null, 'Edward', 'Teach', 'eteach', 'TK4352CXVV843782', 'kY2d0258thP65896', 'vendedores', 'sales', 'Colón', 'M', 'Unido', 'publica', 'Portobelo, calle principal'),
     -> (null, 'William', 'Kidd', 'wkidd', 'TK1983DZXX932665', 'fL8s0259plP65896', 'ejecutivos', 'exec', 'Chiriquí', 'M', 'Divorciado', 'privada', 'Cerro Punta, calle las fresas'),
-6', 'vendedore    -> s', 'sales', 'Panamá', 'M', 'Unido', 'privada', 'Punta Paitilla, calle principal'),
-(null, 'François', 'lOlonnais', 'flolonnais', 'TK0818SZWW576491', 'qL7e0256drP65896', 'ejecutivos', 'exec', 'Panama Oeste', 'M', 'Divorciado', 'publica', 'Arraiján, calle J'),
-(null, 'Roche', 'Brasiliano', 'rbrasiliano', 'TK1929TZYY293576', 'bN5c0252mlP65896', 'otros', 'misc', 'Veraguas', 'M', 'Viudo', 'privada', 'Santiago, calle principal'),
-(null, 'Henry', 'Avery', 'havery', 'TK3030UXZZ781942', 'y3s02569tlP65896', 'cliente', 'regular', 'Bocas del Toro', 'M', 'Soltero', 'publica', 'Isla Colon, calle 5'),
-(null, 'Christopher', 'Myngs', 'cmyngs', 'TK4141VZWW943587', 'jH3f0256msP65896', 'administradores', 'admin', 'Coclé', 'M', 'Casado', 'privada', 'Aguadulce, calle 30'),
-(null, 'Thomas', 'Anstis', 'tanstis', 'TK5252WXYY674839', 'kY2d0258thP65896', 'vendedores', 'sales', 'Colón', 'M', 'Unido', 'publica', 'Margarita, calle principal'),
-(null, 'Jean-David', 'Nau', 'jnau', 'TK6363YZWW865472', 'fL8s0259plP65896', 'ejecutivos', 'exec', 'Chiriquí', 'M', 'Divorciado', 'privada', 'Dolega, calle 7'),
-(null, 'Pedro', 'Gilbert', 'pgilbert', 'TK7474ZZYY235611', 'mQ4z0257kjP65896', 'otros', 'misc', 'Darién', 'M', 'Viudo', 'publica', 'La Palma, calle 3');
-(null, 'Edward', 'Low', 'elow', 'TK5264EZZY294557', 'mQ4z0257kjP65896', 'otros', 'misc', 'Darién', 'M', 'Viudo', 'publica', 'La Palma, calle principal'),
+    -> (null, 'Edward', 'Low', 'elow', 'TK5264EZZY294557', 'mQ4z0257kjP65896', 'otros', 'misc', 'Darién', 'M', 'Viudo', 'publica', 'La Palma, calle principal'),
     -> (null, 'Charles', 'Vane', 'cvane', 'TK6475FYWW736981', 'gA1x0254npP65896', 'cliente', 'regular', 'Herrera', 'M', 'Soltero', 'privada', 'Las Minas, calle 15'),
     -> (null, 'Samuel', 'Bellamy', 'sbellamy', 'TK7586GZYY875422', 'rW3y0253thP65896', 'administradores', 'admin', 'Los Santos', 'M', 'Casado', 'publica', 'La Villa de los Santos, calle 2'),
     -> (null, 'Stede', 'Bonnet', 'sbonnet', 'TK8697HZXX934213', 'pJ6b0251wlP65896', 'vendedores', 'sales', 'Panamá', 'M', 'Unido', 'privada', 'Calle 50'),
@@ -127,5 +119,3 @@ MariaDB [Parcial1_problema2]> INSERT INTO usuario VALUES
     -> (null, 'Thomas', 'Anstis', 'tanstis', 'TK5252WXYY674839', 'kY2d0258thP65896', 'vendedores', 'sales', 'Colón', 'M', 'Unido', 'publica', 'Margarita, calle principal'),
     -> (null, 'Jean-David', 'Nau', 'jnau', 'TK6363YZWW865472', 'fL8s0259plP65896', 'ejecutivos', 'exec', 'Chiriquí', 'M', 'Divorciado', 'privada', 'Dolega, calle 7'),
     -> (null, 'Pedro', 'Gilbert', 'pgilbert', 'TK7474ZZYY235611', 'mQ4z0257kjP65896', 'otros', 'misc', 'Darién', 'M', 'Viudo', 'publica', 'La Palma, calle 3');
-Query OK, 25 rows affected (0.004 sec)
-Records: 25  Duplicates: 0  Warnings: 0
