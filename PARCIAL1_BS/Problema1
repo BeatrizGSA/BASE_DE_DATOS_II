@@ -201,3 +201,53 @@ MariaDB [Parcial1_problema1]> SELECT * from oficinas;
 | OF007      | Capira      | +507 3344556 | Avenida Sur       | Tecnología       | Panamá  | 54321        | América    |         0 | ZonaEste  |
 +------------+-------------+--------------+-------------------+------------------+---------+--------------+------------+-----------+-----------+
 7 rows in set (0.001 sec)
+
+MariaDB [Parcial1_problema1]> INSERT INTO empleados VALUES
+    -> (8821459, 'Pérez', 'Juan', 'ext101', 'juan.perez@cye.com', 'OF001', NULL, 'Gerente General', 'Administración', true),
+    -> (2455889, 'Gómez', 'María', 'ext102', 'maria.gomez@cye.com', 'OF002', 8821459, 'Gerente de Sucursal', 'Operaciones', true),
+    -> (35559999, 'López', 'Pedro', 'ext103', 'pedro.lopez@cye.com', 'OF003', 8821459, 'Gerente de Ventas', 'Comercial', true),
+    -> (82456117, 'Martínez', 'Ana', 'ext104', 'ana.martinez@cye.com', 'OF004', 8821459, 'Gerente de Logística', 'Logística', false),
+    -> (7889965, 'Rodríguez', 'Laura', 'ext105', 'laura.rodriguez@cye.com', 'OF005', 2455889, 'Supervisor de Recursos Humanos', 'Recursos Humanos', true),
+    -> (35556668, 'Sánchez', 'Carlos', 'ext106', 'carlos.sanchez@cye.com', 'OF006', 2455889, 'Contador', 'Contabilidad', true),
+    -> (8211155, 'Ramírez', 'Luis', 'ext107', 'luis.ramirez@cye.com', 'OF007', 35559999, 'Asistente de Ventas', 'Ventas', true);
+Query OK, 7 rows affected (0.004 sec)
+Records: 7  Duplicates: 0  Warnings: 0
+
+MariaDB [Parcial1_problema1]> SELECT * from empleados;
++-----------+------------+--------+-----------+-------------------------+------------+----------+--------------------------------+------------------+---------------+
+| documento | apellido   | nombre | extension | email                   | id_oficina | jefe     | cargo                          | departamento     | status_activo |
++-----------+------------+--------+-----------+-------------------------+------------+----------+--------------------------------+------------------+---------------+
+|   2455889 | Gómez      | María  | ext102    | maria.gomez@cye.com     | OF002      |  8821459 | Gerente de Sucursal            | Operaciones      |             1 |
+|   7889965 | Rodríguez  | Laura  | ext105    | laura.rodriguez@cye.com | OF005      |  2455889 | Supervisor de Recursos Humanos | Recursos Humanos |             1 |
+|   8211155 | Ramírez    | Luis   | ext107    | luis.ramirez@cye.com    | OF007      | 35559999 | Asistente de Ventas            | Ventas           |             1 |
+|   8821459 | Pérez      | Juan   | ext101    | juan.perez@cye.com      | OF001      |     NULL | Gerente General                | Administración   |             1 |
+|  35556668 | Sánchez    | Carlos | ext106    | carlos.sanchez@cye.com  | OF006      |  2455889 | Contador                       | Contabilidad     |             1 |
+|  35559999 | López      | Pedro  | ext103    | pedro.lopez@cye.com     | OF003      |  8821459 | Gerente de Ventas              | Comercial        |             1 |
+|  82456117 | Martínez   | Ana    | ext104    | ana.martinez@cye.com    | OF004      |  8821459 | Gerente de Logística           | Logística        |             0 |
++-----------+------------+--------+-----------+-------------------------+------------+----------+--------------------------------+------------------+---------------+
+7 rows in set (0.001 sec)
+
+MariaDB [Parcial1_problema1]> INSERT INTO clientes VALUES
+    -> (1, 'Conway', 'Rulli', 'Peter', '+507 1234567', 'Albrook Mall', 'Panamá', 'Panamá', '0801', 'Panamá', 8821459, 10000.00, 'Regular', 'p.rulli@conway.com'),
+    -> (2, 'El Costo', 'Kahlo', 'Frida', '+507 2345678', 'Metromall', 'Panamá', 'Panamá', '0802', 'Panamá', 2455889, 15000.00, 'Regular', 'frida.kahlo@elcosto.com'),
+    -> (3, 'El Campeón', 'Van Gogh', 'Vicent', '+507 3456789', 'Albrook Mall', 'Panamá', 'Panamá', '0803', 'Panamá', 35559999, 20000.00, 'Regular', 'v.vangogh@elcampeon.com'),
+    -> (4, 'H&M', 'Rubier', 'Ana', '+507 4567890', 'Multiplaza', 'Panamá', 'Panamá', '0804', 'Panamá', 82456117, 250000.00, 'VIP', 'ana.rub@hm.com'),
+    -> (5, 'Collins', 'Flores', 'Laura', '+507 5678901', 'Multiplaza', 'Panamá', 'Panamá', '0805', 'Panamá', 7889965, 300000.00, 'VIP', 'laura.f@collins.com'),
+    -> (6, 'Steven', 'Santana', 'Carlos', '+507 6789012', 'Multiplaza', 'Panamá', 'Panamá', '0806', 'Panamá', 35556668, 350000.00, 'VIP', 'carlos.santana@steven.com'),
+    -> (7, 'El Titán', 'Ramirez', 'Luis', '+507 7890123', 'Metromall', 'Panamá', 'Panamá', '0807', 'Panamá', 8211155, 40000.00, 'Regular', 'luis.ramirez@eltitan.com');
+Query OK, 7 rows affected (0.005 sec)
+Records: 7  Duplicates: 0  Warnings: 0
+
+MariaDB [Parcial1_problema1]> SELECT * from clientes;
++------------+-------------+----------+--------+--------------+--------------+---------+--------------+--------------+---------+-----------------+---------------+--------------+---------------------------+
+| id_cliente | empresa     | apellido | nombre | telefono     | direccion    | ciudad  | departamento | codigoPostal | país    | empleadoAtiende | limiteCredito | tipo_cliente | email                     |
++------------+-------------+----------+--------+--------------+--------------+---------+--------------+--------------+---------+-----------------+---------------+--------------+---------------------------+
+|          1 | Conway      | Rulli    | Peter  | +507 1234567 | Albrook Mall | Panamá  | Panamá       | 0801         | Panamá  |         8821459 |         10000 | Regular      | p.rulli@conway.com        |
+|          2 | El Costo    | Kahlo    | Frida  | +507 2345678 | Metromall    | Panamá  | Panamá       | 0802         | Panamá  |         2455889 |         15000 | Regular      | frida.kahlo@elcosto.com   |
+|          3 | El Campeón  | Van Gogh | Vicent | +507 3456789 | Albrook Mall | Panamá  | Panamá       | 0803         | Panamá  |        35559999 |         20000 | Regular      | v.vangogh@elcampeon.com   |
+|          4 | H&M         | Rubier   | Ana    | +507 4567890 | Multiplaza   | Panamá  | Panamá       | 0804         | Panamá  |        82456117 |        250000 | VIP          | ana.rub@hm.com            |
+|          5 | Collins     | Flores   | Laura  | +507 5678901 | Multiplaza   | Panamá  | Panamá       | 0805         | Panamá  |         7889965 |        300000 | VIP          | laura.f@collins.com       |
+|          6 | Steven      | Santana  | Carlos | +507 6789012 | Multiplaza   | Panamá  | Panamá       | 0806         | Panamá  |        35556668 |        350000 | VIP          | carlos.santana@steven.com |
+|          7 | El Titán    | Ramirez  | Luis   | +507 7890123 | Metromall    | Panamá  | Panamá       | 0807         | Panamá  |         8211155 |         40000 | Regular      | luis.ramirez@eltitan.com  |
++------------+-------------+----------+--------+--------------+--------------+---------+--------------+--------------+---------+-----------------+---------------+--------------+---------------------------+
+7 rows in set (0.001 sec)
