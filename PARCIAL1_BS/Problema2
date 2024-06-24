@@ -210,3 +210,32 @@ MariaDB [Parcial1_problema2]> INSERT INTO autenticacion VALUES
     -> (null, 51, 'pgilbert', 'mQ4z0257kjP65896', 'Mozilla Firefox', 'TK7474ZZYY235611');
 Query OK, 25 rows affected (0.012 sec)
 Records: 25  Duplicates: 0  Warnings: 0
+
+MariaDB [Parcial1_problema2]> INSERT INTO reporte VALUES
+    ->     (null, 27, 56, '2023-01-01 08:00:00', 'Informe detallado sobre los puertos abiertos encontrados.'),
+    ->     (null, 28, 57, '2023-01-02 09:15:00', 'Listado de servicios identificados en el sistema.'),
+    ->     (null, 29, 58, '2023-01-03 10:30:00', 'Enumeración completa de usuarios y recursos en la red objetivo.'),
+    ->     (null, 30, 59, '2023-01-04 11:45:00', 'Registro detallado de los firewalls y filtros activos identificados.'),
+    ->     (null, 31, 60, '2023-01-05 13:00:00', 'Análisis de vulnerabilidades en protocolos de red específicos.'),
+    ->     (null, 32, 61, '2023-01-06 14:15:00', 'Informe detallado sobre las vulnerabilidades de inyección SQL encontradas.'),
+    ->     (null, 33, 62, '2023-01-07 15:30:00', 'Registro de las vulnerabilidades XSS identificadas y su impacto potencial.'),
+    ->     (null, 34, 63, '2023-01-08 16:45:00', 'Detalles sobre las pruebas realizadas para evaluar la vulnerabilidad CSRF.'),
+    ->     (null, 35, 64, '2023-01-09 18:00:00', 'Informe detallado sobre las debilidades encontradas en la autenticación y gestión de sesiones.'),
+    ->     (null, 36, 65, '2023-01-10 19:15:00', 'Listado de archivos y directorios sensibles encontrados en la aplicación web objetivo.'),
+    ->    (null, 37, 66, '2023-01-11 20:30:00', 'Informe sobre el almacenamiento local y datos sensibles encontrados en aplicaciones móviles.'),
+    ->     (null, 38, 67, '2023-01-12 21:45:00', 'Análisis detallado del tráfico interceptado y posibles vulnerabilidades identificadas.'),
+    ->     (null, 39, 68, '2023-01-13 23:00:00', 'Informe detallado sobre la revisión del código de aplicaciones móviles y las vulnerabilidades encontradas.'),
+    ->     (null, 40, 69, '2023-01-14 08:00:00', 'Registro de las vulnerabilidades identificadas en los mecanismos de autenticación y autorización de aplicaciones móviles.'),
+    ->      (null, 41, 70, '2023-01-15 09:15:00', 'Informe sobre la manipulación exitosa de datos sensibles en aplicaciones móviles.'),
+    ->      (null, 42, 71, '2023-01-16 10:30:00', 'Detalles sobre la revisión de configuración y debilidades encontradas en puntos de acceso inalámbricos.'),
+    ->      (null, 43, 72, '2023-01-17 11:45:00', 'Registro de pruebas de fuerza bruta realizadas contra puntos de acceso inalámbricos.'),
+    ->     (null, 44, 73, '2023-01-18 13:00:00', 'Informe detallado sobre el tráfico inalámbrico monitoreado y la información sensible capturada.'),
+    ->      (null, 45, 74, '2023-01-19 14:15:00', 'Registro de ataques de desautenticación realizados y su impacto en dispositivos inalámbricos.'),
+    ->      (null, 46, 75, '2023-01-20 15:30:00', 'Análisis detallado de la seguridad de los protocolos inalámbricos utilizados en la red objetivo.'),
+    ->      (null, 47, 76, '2023-01-21 16:45:00', 'Informe detallado sobre los correos electrónicos falsos enviados y la efectividad del phishing.'),
+    ->      (null, 48, 77, '2023-01-31 18:00:00', 'Registro de actividades de reconocimiento y la información obtenida sobre el objetivo.'),
+    ->      (null, 49, 78, '2023-02-01 19:15:00', 'Informe sobre las vulnerabilidades identificadas y evaluadas en sistemas y redes.'),
+    ->      (null, 50, 79, '2023-02-02 20:30:00', 'Detalles sobre las vulnerabilidades explotadas y su impacto en sistemas comprometidos.'),
+    ->      (null, 51, 80, '2023-02-03 21:45:00', 'Registro de técnicas utilizadas para escalar privilegios después de comprometer un sistema.');
+Query OK, 25 rows affected (0.004 sec)
+Records: 25  Duplicates: 0  Warnings: 0
