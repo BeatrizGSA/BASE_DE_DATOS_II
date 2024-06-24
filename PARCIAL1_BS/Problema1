@@ -251,3 +251,28 @@ MariaDB [Parcial1_problema1]> SELECT * from clientes;
 |          7 | El Titán    | Ramirez  | Luis   | +507 7890123 | Metromall    | Panamá  | Panamá       | 0807         | Panamá  |        82231155 |         40000 | Regular      | luis.ramirez@eltitan.com  |
 +------------+-------------+----------+--------+--------------+--------------+---------+--------------+--------------+---------+-----------------+---------------+--------------+---------------------------+
 7 rows in set (0.001 sec)
+
+MariaDB [Parcial1_problema1]> INSERT INTO ordenes VALUES
+    -> (1, '2024-06-01', '2024-06-10', 'Pendiente', 'Blusa de seda, talla M, color blanco', 1, 'Normal', 'CYE00000001'),
+    -> (2, '2024-06-02', '2024-06-28', 'Procesando', 'Falda lápiz, talla L, color negro', 2, 'Normal', 'CYE00000002'),
+    -> (3, '2024-06-03', '2024-06-12', 'Enviado', 'Pantalón de vestir, talla S, color azul marino', 3, 'Normal', 'CYE00000003'),
+    -> (4, '2024-06-04', '2024-06-27', 'Prioridad', 'Vestido de cóctel, talla M, color rojo', 4, 'Urgente', 'CYE00000004'),
+    -> (5, '2024-06-05', '2024-06-27', 'Prioridad', 'Blazer de lana, talla L, color gris', 5, 'Urgente', 'CYE00000005'),
+    -> (6, '2024-06-06', '2024-06-09', 'Enviado', 'Abrigo de invierno, talla M, color negro', 6, 'Urgente', 'CYE00000006'),
+    -> (7, '2024-06-07', '2024-06-15', 'Cancelado', 'Chaqueta de cuero, talla XL, color marrón', 7, 'Normal', 'CYE00000007');
+Query OK, 7 rows affected (0.006 sec)
+Records: 7  Duplicates: 0  Warnings: 0
+
+MariaDB [Parcial1_problema1]> SELECT * from ordenes;
++----------+---------------+--------------------+------------+-------------------------------------------------+------------+------------+-----------------+
+| id_orden | fechaRecibido | fechaLimiteEntrega | estado     | observacion                                     | id_cliente | tipo_orden | tracking_number |
++----------+---------------+--------------------+------------+-------------------------------------------------+------------+------------+-----------------+
+|        1 | 2024-06-01    | 2024-06-10         | Pendiente  | Blusa de seda, talla M, color blanco            |          1 | Normal     | CYE00000001     |
+|        2 | 2024-06-02    | 2024-06-28         | Procesando | Falda lápiz, talla L, color negro               |          2 | Normal     | CYE00000002     |
+|        3 | 2024-06-03    | 2024-06-12         | Enviado    | Pantalón de vestir, talla S, color azul marino  |          3 | Normal     | CYE00000003     |
+|        4 | 2024-06-04    | 2024-06-27         | Prioridad  | Vestido de cóctel, talla M, color rojo          |          4 | Urgente    | CYE00000004     |
+|        5 | 2024-06-05    | 2024-06-27         | Prioridad  | Blazer de lana, talla L, color gris             |          5 | Urgente    | CYE00000005     |
+|        6 | 2024-06-06    | 2024-06-09         | Enviado    | Abrigo de invierno, talla M, color negro        |          6 | Urgente    | CYE00000006     |
+|        7 | 2024-06-07    | 2024-06-15         | Cancelado  | Chaqueta de cuero, talla XL, color marrón       |          7 | Normal     | CYE00000007     |
++----------+---------------+--------------------+------------+-------------------------------------------------+------------+------------+-----------------+
+7 rows in set (0.001 sec)
