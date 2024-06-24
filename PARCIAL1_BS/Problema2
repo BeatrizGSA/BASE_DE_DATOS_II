@@ -319,3 +319,41 @@ MariaDB [Parcial1_problema2]> SELECT * FROM Medios_de_pagos;
 |     76 | Pedro       | Viudo        | La Palma, calle 3               | dinners club international | Pedro Gilbert          |
 +--------+-------------+--------------+---------------------------------+----------------------------+------------------------+
 25 rows in set (0.002 sec)
+
+MariaDB [Parcial1_problema2]> CREATE VIEW Autenticacion_de_Datos_de_Usuario AS
+    -> SELECT a.idAutenticacion, a.fecha, a.nombre_usuario, u.apellido, u.ciudad, u.tipo_empresa
+    -> FROM autenticacion a
+    -> JOIN usuario u ON a.idUsuario = u.idUsuario;
+Query OK, 0 rows affected (0.007 sec)
+
+MariaDB [Parcial1_problema2]> SELECT * from Autenticacion_de_Datos_de_Usuario;
++-----------------+------------+----------------+------------+----------------+--------------+
+| idAutenticacion | fecha      | nombre_usuario | apellido   | ciudad         | tipo_empresa |
++-----------------+------------+----------------+------------+----------------+--------------+
+|              51 | 2023-06-24 | fdrake         | Drake      | Bocas del Toro | publica      |
+|              52 | 2023-06-24 | hmorgan        | Morgan     | Coclé          | privada      |
+|              53 | 2023-06-24 | eteach         | Teach      | Colón          | publica      |
+|              54 | 2023-06-24 | wkidd          | Kidd       | Chiriquí       | privada      |
+|              55 | 2023-06-24 | elow           | Low        | Darién         | publica      |
+|              56 | 2023-06-24 | cvane          | Vane       | Herrera        | privada      |
+|              57 | 2023-06-24 | sbellamy       | Bellamy    | Los Santos     | publica      |
+|              58 | 2023-06-24 | sbonnet        | Bonnet     | Panamá         | privada      |
+|              59 | 2023-06-24 | bhornigold     | Hornigold  | Panama Oeste   | publica      |
+|              60 | 2023-06-24 | jrackham       | Rackham    | Veraguas       | privada      |
+|              61 | 2023-06-24 | abonny         | Bonny      | Bocas del Toro | publica      |
+|              62 | 2023-06-24 | mread          | Read       | Coclé          | privada      |
+|              63 | 2023-06-24 | jhawkins       | Hawkins    | Colón          | publica      |
+|              64 | 2023-06-24 | broberts       | Roberts    | Chiriquí       | privada      |
+|              65 | 2023-06-24 | glowther       | Lowther    | Darién         | publica      |
+|              66 | 2023-06-24 | ttew           | Tew        | Herrera        | privada      |
+|              67 | 2023-06-24 | hdavis         | Davis      | Los Santos     | publica      |
+|              68 | 2023-06-24 | ldegraaf       | de Graaf   | Panamá         | privada      |
+|              69 | 2023-06-24 | flolonnais     | lOlonnais  | Panama Oeste   | publica      |
+|              70 | 2023-06-24 | rbrasiliano    | Brasiliano | Veraguas       | privada      |
+|              71 | 2023-06-24 | havery         | Avery      | Bocas del Toro | publica      |
+|              72 | 2023-06-24 | cmyngs         | Myngs      | Coclé          | privada      |
+|              73 | 2023-06-24 | tanstis        | Anstis     | Colón          | publica      |
+|              74 | 2023-06-24 | jnau           | Nau        | Chiriquí       | privada      |
+|              75 | 2023-06-24 | pgilbert       | Gilbert    | Darién         | publica      |
++-----------------+------------+----------------+------------+----------------+--------------+
+25 rows in set (0.004 sec)
