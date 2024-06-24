@@ -276,3 +276,29 @@ MariaDB [Parcial1_problema1]> SELECT * from ordenes;
 |        7 | 2024-06-07    | 2024-06-15         | Cancelado  | Chaqueta de cuero, talla XL, color marrón       |          7 | Normal     | CYE00000007     |
 +----------+---------------+--------------------+------------+-------------------------------------------------+------------+------------+-----------------+
 7 rows in set (0.001 sec)
+
+MariaDB [Parcial1_problema1]> INSERT INTO lineasproductos VALUES
+    -> (1, 'Ropa de Oficina', 'Ropa formal y semi-formal para uso en oficina.', '<p>Ropa formal y semi-formal para uso en oficina.</p>', 'ropa_oficina.jpg', 'A', true),
+    -> (2, 'Ropa Casual', 'Ropa casual para el día a día.', '<p>Ropa casual para el día a día.</p>', 'ropa_casual.jpg', 'A', true),
+    -> (3, 'Ropa Deportiva', 'Ropa para actividades deportivas.', '<p>Ropa para actividades deportivas.</p>', 'ropa_deportiva.jpg', 'B', true),
+    -> (4, 'Ropa de Noche', 'Ropa elegante para eventos nocturnos.', '<p>Ropa elegante para eventos nocturnos.</p>', 'ropa_noche.jpg', 'A', true),
+    -> (5, 'Ropa de Invierno', 'Ropa abrigada para el invierno.', '<p>Ropa abrigada para el invierno.</p>', 'ropa_invierno.jpg', 'B', true),
+    -> (6, 'Ropa de Verano', 'Ropa ligera para el verano.', '<p>Ropa ligera para el verano.</p>', 'ropa_verano.jpg', 'C', true),
+    -> (7, 'Accesorios', 'Complementos de moda.', '<p>Complementos de moda.</p>', 'accesorios.jpg', 'A', true);
+Query OK, 7 rows affected (0.003 sec)
+Records: 7  Duplicates: 0  Warnings: 0
+
+MariaDB [Parcial1_problema1]> SELECT * from lineasproductos;
++------------------+------------------+------------------------------------------------+-------------------------------------------------------+--------------------+---------------+------------+
+| id_lineaproducto | nombreLinea      | textoDescripcion                               | htmlDescripcion                                       | imagen             | clasificacion | disponible |
++------------------+------------------+------------------------------------------------+-------------------------------------------------------+--------------------+---------------+------------+
+|                1 | Ropa de Oficina  | Ropa formal y semi-formal para uso en oficina. | <p>Ropa formal y semi-formal para uso en oficina.</p> | ropa_oficina.jpg   | A             |          1 |
+|                2 | Ropa Casual      | Ropa casual para el día a día.                 | <p>Ropa casual para el día a día.</p>                 | ropa_casual.jpg    | A             |          1 |
+|                3 | Ropa Deportiva   | Ropa para actividades deportivas.              | <p>Ropa para actividades deportivas.</p>              | ropa_deportiva.jpg | B             |          1 |
+|                4 | Ropa de Noche    | Ropa elegante para eventos nocturnos.          | <p>Ropa elegante para eventos nocturnos.</p>          | ropa_noche.jpg     | A             |          1 |
+|                5 | Ropa de Invierno | Ropa abrigada para el invierno.                | <p>Ropa abrigada para el invierno.</p>                | ropa_invierno.jpg  | B             |          1 |
+|                6 | Ropa de Verano   | Ropa ligera para el verano.                    | <p>Ropa ligera para el verano.</p>                    | ropa_verano.jpg    | C             |          1 |
+|                7 | Accesorios       | Complementos de moda.                          | <p>Complementos de moda.</p>                          | accesorios.jpg     | A             |          1 |
++------------------+------------------+------------------------------------------------+-------------------------------------------------------+--------------------+---------------+------------+
+7 rows in set (0.001 sec)
+
