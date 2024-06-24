@@ -37,3 +37,58 @@ MariaDB [Parcial1_problema2]> CREATE TABLE usuario (
     ->     direccion VARCHAR(50)
     -> );
 Query OK, 0 rows affected (0.060 sec)
+
+MariaDB [Parcial1_problema2]> CREATE TABLE pago (
+    ->     idPago INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
+    ->     idUsuario INT NOT NULL,
+    ->     tipo_tarjeta ENUM('visa', 'mastercard', 'american express', 'discover network', 'dinners club international'),
+    ->     numero_tarjeta_credito VARCHAR(16),
+    ->     nombre_tarjeta_credito VARCHAR(50),
+    ->     cvc INT,
+    ->     fecha_expiracion DATE,
+    ->     FOREIGN KEY (idUsuario) REFERENCES usuario(idUsuario)
+    -> );
+Query OK, 0 rows affected (0.019 sec)
+
+MariaDB [Parcial1_problema2]> CREATE TABLE tipos_de_pruebas (
+    ->     idTipodeprueba INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
+    ->     referencia VARCHAR(50),
+    ->     nombre VARCHAR(50),
+    ->     descripcion TEXT,
+    ->     fecha_ingreso DATE,
+    ->     estado ENUM('activo', 'desactivado') DEFAULT 'activo',
+    ->     categoria_principal ENUM(
+    ->         'Network Penetration Testing',
+    ->         'Web Application Penetration Testing',
+    ->         'Mobile Application Penetration Testing',
+    ->         'Wireless Penetration Testing',
+    ->         'Social Engineering Penetration Testing',
+    ->         'Physical Penetration Testing',
+    ->         'Red Team Penetration Testing',
+    ->         'Purple Team Testing'
+    ->     )
+    -> );
+Query OK, 0 rows affected (0.011 sec)
+
+MariaDB [Parcial1_problema2]> CREATE TABLE autenticacion (
+    ->     idAutenticacion INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
+    ->     idUsuario INT NOT NULL,
+    ->     nombre_usuario VARCHAR(50),
+    ->     contrasena VARCHAR(50),
+    ->     agente_usuario VARCHAR(100),
+    ->     token VARCHAR(50),
+    ->     FOREIGN KEY (idUsuario) REFERENCES usuario(idUsuario)
+    -> );
+Query OK, 0 rows affected (0.013 sec)
+
+MariaDB [Parcial1_problema2]> CREATE TABLE reporte (
+    ->     idReporte INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
+    ->     idUsuario INT NOT NULL,
+    ->     idTipodeprueba INT NOT NULL,
+    ->     fecha_generacion DATETIME,
+    ->     resultado TEXT,
+    ->     otros_campos VARCHAR(100),
+    ->     FOREIGN KEY (idUsuario) REFERENCES usuario(idUsuario),
+    ->     FOREIGN KEY (idTipodeprueba) REFERENCES tipos_de_pruebas(idTipodeprueba)
+    -> );
+Query OK, 0 rows affected (0.014 sec)
