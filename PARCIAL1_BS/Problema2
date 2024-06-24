@@ -1,1 +1,39 @@
+Microsoft Windows [Versión 10.0.22631.3737]
+(c) Microsoft Corporation. Todos los derechos reservados.
 
+C:\Users\BGSA>docker start bd
+bd
+
+C:\Users\BGSA>docker exec -it bd bash
+
+root@3cea035f8c7a:/# mariadb -u root -p
+Enter password:
+Welcome to the MariaDB monitor.  Commands end with ; or \g.
+Your MariaDB connection id is 4
+Server version: 11.4.2-MariaDB-ubu2404 mariadb.org binary distribution
+
+Copyright (c) 2000, 2018, Oracle, MariaDB Corporation Ab and others.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+MariaDB [(none)]> CREATE DATABASE Parcial1_problema2;
+Query OK, 1 row affected (0.007 sec)
+
+MariaDB [(none)]> USE Parcial1_problema2;
+Database changed
+MariaDB [Parcial1_problema2]> CREATE TABLE usuario (
+    ->     idUsuario INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
+    ->     nombre VARCHAR(50),
+    ->     apellido VARCHAR(50),
+    ->     nombre_usuario VARCHAR(50) UNIQUE,
+    ->     token VARCHAR(50),
+    ->     contrasena VARCHAR(50),
+    ->     categoria_usuario ENUM('cliente', 'administradores', 'vendedores', 'ejecutivos', 'otros'),
+    ->     tipoUsuario TEXT,
+    ->     ciudad VARCHAR(50),
+    ->     sexo ENUM('M', 'F'),
+    ->     estado_civil ENUM('Soltero', 'Casado', 'Unido', 'Divorciado', 'Viudo'),
+    ->     tipo_empresa ENUM('publica', 'privada'),
+    ->     direccion VARCHAR(50)
+    -> );
+Query OK, 0 rows affected (0.060 sec)
