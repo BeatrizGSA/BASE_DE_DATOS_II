@@ -278,40 +278,40 @@ MariaDB [Parcial1_problema2]> SELECT * FROM Clasificacion_de_los_Tipos_de_Usuari
 25 rows in set (0.001 sec)
 
 MariaDB [Parcial1_problema2]> CREATE VIEW Medios_de_pagos AS
-    -> SELECT p.idPago, u.nombre, u.apellido, u.estado_civil, u.direccion, p.tipo_tarjeta, p.nombre_tarjeta_credito
+    ->  SELECT p.idPago, u.nombre, u.estado_civil, u.direccion, p.tipo_tarjeta, p.nombre_tarjeta_credito
     -> FROM pago p
     -> JOIN usuario u ON p.idUsuario = u.idUsuario;
 Query OK, 0 rows affected (0.007 sec)
 
-MariaDB [Parcial1_problema2]> SELECT * FROM Medios_de_pagos;
-+--------+-------------+------------+--------------+---------------------------------+----------------------------+------------------------+
-| idPago | nombre      | apellido   | estado_civil | direccion                       | tipo_tarjeta               | nombre_tarjeta_credito |
-+--------+-------------+------------+--------------+---------------------------------+----------------------------+------------------------+
-|     52 | Francis     | Drake      | Soltero      | Isla Colon, calle principat     | visa                       | Francis Drake          |
-|     53 | Henry       | Morgan     | Casado       | Penonome, calle 34              | mastercard                 | Henry Morgan           |
-|     54 | Edward      | Teach      | Unido        | Portobelo, calle principal      | american express           | Edward Teach           |
-|     55 | William     | Kidd       | Divorciado   | Cerro Punta, calle las fresas   | discover network           | William Kidd           |
-|     56 | Edward      | Low        | Viudo        | La Palma, calle principal       | dinners club international | Edward Low             |
-|     57 | Charles     | Vane       | Soltero      | Las Minas, calle 15             | visa                       | Charles Vane           |
-|     58 | Samuel      | Bellamy    | Casado       | La Villa de los Santos, calle 2 | mastercard                 | Samuel Bellamy         |
-|     59 | Stede       | Bonnet     | Unido        | Calle 50                        | american express           | Stede Bonnet           |
-|     60 | Benjamin    | Hornigold  | Divorciado   | La Chorrera, calle M            | discover network           | Benjamin Hornigold     |
-|     61 | Jack        | Rackham    | Viudo        | Santa Fe, calle principal       | dinners club international | Jack Rackham           |
-|     62 | Anne        | Bonny      | Soltero      | Isla Colon, calle 2             | visa                       | Anne Bonny             |
-|     63 | Mary        | Read       | Casado       | Aguadulce, calle 5              | mastercard                 | Mary Read              |
-|     64 | John        | Hawkins    | Unido        | Margarita, calle principal      | american express           | John Hawkins           |
-|     65 | Bartholomew | Roberts    | Divorciado   | David, calle 4                  | discover network           | Bartholomew Roberts    |
-|     66 | George      | Lowther    | Viudo        | La Palma, calle principal       | dinners club international | George Lowther         |
-|     67 | Thomas      | Tew        | Soltero      | Ocú, calle principal            | visa                       | Thomas Tew             |
-|     68 | Howell      | Davis      | Casado       | Las Tablas, calle 14            | mastercard                 | Howell Davis           |
-|     69 | Laurens     | de Graaf   | Unido        | Punta Paitilla, calle principal | american express           | Laurens de Graaf       |
-|     70 | François    | lOlonnais  | Divorciado   | Arraiján, calle J               | discover network           | François lOlonnais     |
-|     71 | Roche       | Brasiliano | Viudo        | Santiago, calle principal       | dinners club international | Roche Brasiliano       |
-|     72 | Henry       | Avery      | Soltero      | Isla Colon, calle 5             | visa                       | Henry Avery            |
-|     73 | Christopher | Myngs      | Casado       | Aguadulce, calle 30             | mastercard                 | Christopher Myngs      |
-|     74 | Thomas      | Anstis     | Unido        | Margarita, calle principal      | american express           | Thomas Anstis          |
-|     75 | Jean-David  | Nau        | Divorciado   | Dolega, calle 7                 | discover network           | Jean-David Nau         |
-|     76 | Pedro       | Gilbert    | Viudo        | La Palma, calle 3               | dinners club international | Pedro Gilbert          |
-+--------+-------------+------------+--------------+---------------------------------+----------------------------+------------------------+
-25 rows in set (0.001 sec)
 
+MariaDB [Parcial1_problema2]> SELECT * FROM Medios_de_pagos;
++--------+-------------+--------------+---------------------------------+----------------------------+------------------------+
+| idPago | nombre      | estado_civil | direccion                       | tipo_tarjeta               | nombre_tarjeta_credito |
++--------+-------------+--------------+---------------------------------+----------------------------+------------------------+
+|     52 | Francis     | Soltero      | Isla Colon, calle principat     | visa                       | Francis Drake          |
+|     53 | Henry       | Casado       | Penonome, calle 34              | mastercard                 | Henry Morgan           |
+|     54 | Edward      | Unido        | Portobelo, calle principal      | american express           | Edward Teach           |
+|     55 | William     | Divorciado   | Cerro Punta, calle las fresas   | discover network           | William Kidd           |
+|     56 | Edward      | Viudo        | La Palma, calle principal       | dinners club international | Edward Low             |
+|     57 | Charles     | Soltero      | Las Minas, calle 15             | visa                       | Charles Vane           |
+|     58 | Samuel      | Casado       | La Villa de los Santos, calle 2 | mastercard                 | Samuel Bellamy         |
+|     59 | Stede       | Unido        | Calle 50                        | american express           | Stede Bonnet           |
+|     60 | Benjamin    | Divorciado   | La Chorrera, calle M            | discover network           | Benjamin Hornigold     |
+|     61 | Jack        | Viudo        | Santa Fe, calle principal       | dinners club international | Jack Rackham           |
+|     62 | Anne        | Soltero      | Isla Colon, calle 2             | visa                       | Anne Bonny             |
+|     63 | Mary        | Casado       | Aguadulce, calle 5              | mastercard                 | Mary Read              |
+|     64 | John        | Unido        | Margarita, calle principal      | american express           | John Hawkins           |
+|     65 | Bartholomew | Divorciado   | David, calle 4                  | discover network           | Bartholomew Roberts    |
+|     66 | George      | Viudo        | La Palma, calle principal       | dinners club international | George Lowther         |
+|     67 | Thomas      | Soltero      | Ocú, calle principal            | visa                       | Thomas Tew             |
+|     68 | Howell      | Casado       | Las Tablas, calle 14            | mastercard                 | Howell Davis           |
+|     69 | Laurens     | Unido        | Punta Paitilla, calle principal | american express           | Laurens de Graaf       |
+|     70 | François    | Divorciado   | Arraiján, calle J               | discover network           | François lOlonnais     |
+|     71 | Roche       | Viudo        | Santiago, calle principal       | dinners club international | Roche Brasiliano       |
+|     72 | Henry       | Soltero      | Isla Colon, calle 5             | visa                       | Henry Avery            |
+|     73 | Christopher | Casado       | Aguadulce, calle 30             | mastercard                 | Christopher Myngs      |
+|     74 | Thomas      | Unido        | Margarita, calle principal      | american express           | Thomas Anstis          |
+|     75 | Jean-David  | Divorciado   | Dolega, calle 7                 | discover network           | Jean-David Nau         |
+|     76 | Pedro       | Viudo        | La Palma, calle 3               | dinners club international | Pedro Gilbert          |
++--------+-------------+--------------+---------------------------------+----------------------------+------------------------+
+25 rows in set (0.002 sec)
