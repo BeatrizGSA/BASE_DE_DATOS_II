@@ -92,11 +92,10 @@ MariaDB [Parcial1_problema2]> CREATE TABLE reporte (
     ->     idTipodeprueba INT NOT NULL,
     ->     fecha_generacion DATETIME,
     ->     resultado TEXT,
-    ->     otros_campos VARCHAR(100),
     ->     FOREIGN KEY (idUsuario) REFERENCES usuario(idUsuario),
-    ->     FOREIGN KEY (idTipodeprueba) REFERENCES tipos_de_pruebas(idTipodeprueba)
+    ->  FOREIGN KEY (idTipodeprueba) REFERENCES tipos_de_pruebas(idTipodeprueba)
     -> );
-Query OK, 0 rows affected (0.014 sec)
+Query OK, 0 rows affected (0.020 sec)
 
 MariaDB [Parcial1_problema2]> INSERT INTO usuario VALUES
     -> (null, 'Francis', 'Drake', 'fdrake', 'TK9862AZSS555588', 'y3s02569tlP65896', 'cliente', 'regular', 'Bocas del Toro', 'M', 'Soltero', 'publica', 'Isla Colon, calle principat'),
