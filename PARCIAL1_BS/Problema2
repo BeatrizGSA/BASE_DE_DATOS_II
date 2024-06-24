@@ -239,3 +239,40 @@ MariaDB [Parcial1_problema2]> INSERT INTO reporte VALUES
     ->      (null, 51, 80, '2023-02-03 21:45:00', 'Registro de técnicas utilizadas para escalar privilegios después de comprometer un sistema.');
 Query OK, 25 rows affected (0.004 sec)
 Records: 25  Duplicates: 0  Warnings: 0
+
+MariaDB [Parcial1_problema2]> CREATE VIEW Clasificacion_de_los_Tipos_de_Usuarios_ AS
+    -> SELECT nombre, apellido, tipo_empresa, nombre_usuario, categoria_usuario
+    -> FROM usuario;
+Query OK, 0 rows affected (0.009 sec)
+
+MariaDB [Parcial1_problema2]> SELECT * FROM Clasificacion_de_los_Tipos_de_Usuarios_;
++-------------+------------+--------------+----------------+-------------------+
+| nombre      | apellido   | tipo_empresa | nombre_usuario | categoria_usuario |
++-------------+------------+--------------+----------------+-------------------+
+| Francis     | Drake      | publica      | fdrake         | cliente           |
+| Henry       | Morgan     | privada      | hmorgan        | administradores   |
+| Edward      | Teach      | publica      | eteach         | vendedores        |
+| William     | Kidd       | privada      | wkidd          | ejecutivos        |
+| Edward      | Low        | publica      | elow           | otros             |
+| Charles     | Vane       | privada      | cvane          | cliente           |
+| Samuel      | Bellamy    | publica      | sbellamy       | administradores   |
+| Stede       | Bonnet     | privada      | sbonnet        | vendedores        |
+| Benjamin    | Hornigold  | publica      | bhornigold     | ejecutivos        |
+| Jack        | Rackham    | privada      | jrackham       | otros             |
+| Anne        | Bonny      | publica      | abonny         | cliente           |
+| Mary        | Read       | privada      | mread          | administradores   |
+| John        | Hawkins    | publica      | jhawkins       | vendedores        |
+| Bartholomew | Roberts    | privada      | broberts       | ejecutivos        |
+| George      | Lowther    | publica      | glowther       | otros             |
+| Thomas      | Tew        | privada      | ttew           | cliente           |
+| Howell      | Davis      | publica      | hdavis         | administradores   |
+| Laurens     | de Graaf   | privada      | ldegraaf       | vendedores        |
+| François    | lOlonnais  | publica      | flolonnais     | ejecutivos        |
+| Roche       | Brasiliano | privada      | rbrasiliano    | otros             |
+| Henry       | Avery      | publica      | havery         | cliente           |
+| Christopher | Myngs      | privada      | cmyngs         | administradores   |
+| Thomas      | Anstis     | publica      | tanstis        | vendedores        |
+| Jean-David  | Nau        | privada      | jnau           | ejecutivos        |
+| Pedro       | Gilbert    | publica      | pgilbert       | otros             |
++-------------+------------+--------------+----------------+-------------------+
+25 rows in set (0.001 sec)
