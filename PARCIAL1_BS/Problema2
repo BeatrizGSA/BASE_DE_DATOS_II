@@ -50,6 +50,11 @@ MariaDB [Parcial1_problema2]> CREATE TABLE pago (
     -> );
 Query OK, 0 rows affected (0.019 sec)
 
+MariaDB [Parcial1_problema2]> ALTER TABLE pago
+    -> ADD COLUMN imagen_tarjeta VARCHAR(255);
+Query OK, 0 rows affected (0.031 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
 MariaDB [Parcial1_problema2]> CREATE TABLE tipos_de_pruebas (
     ->     idTipodeprueba INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
     ->     referencia VARCHAR(50),
