@@ -326,3 +326,27 @@ MariaDB [Parcial1_problema1]> SELECT * from productos;
 | PR007       | Chaqueta de cuero   |                1 | XL     |      100 |         100 |  105 |              1 | 0123456789018 |
 +-------------+---------------------+------------------+--------+----------+-------------+------+----------------+---------------+
 7 rows in set (0.001 sec)
+MariaDB [Parcial1_problema1]> INSERT INTO detallesordenes VALUES
+    -> (1, 'PR001', 50, 25.00, 1, true, 'Malo'),
+    -> (2, 'PR002', 350, 30.00, 2, false, 'Regular'),
+    -> (3, 'PR003', 2540, 15.00, 3, false, 'Bueno'),
+    -> (4, 'PR004', 25, 50.00, 4, true, 'Malo'),
+    -> (5, 'PR005', 4589, 40.00, 5, false, 'Excelente'),
+    -> (6, 'PR006', 28, 20.00, 6, true, 'Malo'),
+    -> (7, 'PR007', 300, 35.00, 7, false, 'Regular');
+Query OK, 7 rows affected (0.003 sec)
+Records: 7  Duplicates: 0  Warnings: 0
+
+MariaDB [Parcial1_problema1]> SELECT * from detallesordenes;
++----------+-------------+----------------+---------------+--------------+-------------------+--------------+
+| id_orden | id_producto | cantidadPedida | valorUnitario | ordenEntrega | requiere_revision | nivelCalidad |
++----------+-------------+----------------+---------------+--------------+-------------------+--------------+
+|        1 | PR001       |             50 |            25 |            1 |                 1 | Malo         |
+|        2 | PR002       |            350 |            30 |            2 |                 0 | Regular      |
+|        3 | PR003       |           2540 |            15 |            3 |                 0 | Bueno        |
+|        4 | PR004       |             25 |            50 |            4 |                 1 | Malo         |
+|        5 | PR005       |           4589 |            40 |            5 |                 0 | Excelente    |
+|        6 | PR006       |             28 |            20 |            6 |                 1 | Malo         |
+|        7 | PR007       |            300 |            35 |            7 |                 0 | Regular      |
++----------+-------------+----------------+---------------+--------------+-------------------+--------------+
+7 rows in set (0.003 sec)
