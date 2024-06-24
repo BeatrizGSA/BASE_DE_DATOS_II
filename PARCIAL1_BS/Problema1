@@ -205,11 +205,11 @@ MariaDB [Parcial1_problema1]> SELECT * from oficinas;
 MariaDB [Parcial1_problema1]> INSERT INTO empleados VALUES
     -> (8821459, 'Pérez', 'Juan', 'ext101', 'juan.perez@cye.com', 'OF001', NULL, 'Gerente General', 'Administración', true),
     -> (2455889, 'Gómez', 'María', 'ext102', 'maria.gomez@cye.com', 'OF002', 8821459, 'Gerente de Sucursal', 'Operaciones', true),
-    -> (35559999, 'López', 'Pedro', 'ext103', 'pedro.lopez@cye.com', 'OF003', 8821459, 'Gerente de Ventas', 'Comercial', true),
+    -> (35557869, 'López', 'Pedro', 'ext103', 'pedro.lopez@cye.com', 'OF003', 8821459, 'Gerente de Ventas', 'Comercial', true),
     -> (82456117, 'Martínez', 'Ana', 'ext104', 'ana.martinez@cye.com', 'OF004', 8821459, 'Gerente de Logística', 'Logística', false),
     -> (7889965, 'Rodríguez', 'Laura', 'ext105', 'laura.rodriguez@cye.com', 'OF005', 2455889, 'Supervisor de Recursos Humanos', 'Recursos Humanos', true),
-    -> (35556668, 'Sánchez', 'Carlos', 'ext106', 'carlos.sanchez@cye.com', 'OF006', 2455889, 'Contador', 'Contabilidad', true),
-    -> (8211155, 'Ramírez', 'Luis', 'ext107', 'luis.ramirez@cye.com', 'OF007', 35559999, 'Asistente de Ventas', 'Ventas', true);
+    -> (37899696, 'Sánchez', 'Carlos', 'ext106', 'carlos.sanchez@cye.com', 'OF006', 2455889, 'Contador', 'Contabilidad', true),
+    -> (82231155, 'Ramírez', 'Luis', 'ext107', 'luis.ramirez@cye.com', 'OF007', 35557869, 'Asistente de Ventas', 'Ventas', true);
 Query OK, 7 rows affected (0.004 sec)
 Records: 7  Duplicates: 0  Warnings: 0
 
@@ -219,12 +219,10 @@ MariaDB [Parcial1_problema1]> SELECT * from empleados;
 +-----------+------------+--------+-----------+-------------------------+------------+----------+--------------------------------+------------------+---------------+
 |   2455889 | Gómez      | María  | ext102    | maria.gomez@cye.com     | OF002      |  8821459 | Gerente de Sucursal            | Operaciones      |             1 |
 |   7889965 | Rodríguez  | Laura  | ext105    | laura.rodriguez@cye.com | OF005      |  2455889 | Supervisor de Recursos Humanos | Recursos Humanos |             1 |
-|   8211155 | Ramírez    | Luis   | ext107    | luis.ramirez@cye.com    | OF007      | 35559999 | Asistente de Ventas            | Ventas           |             1 |
 |   8821459 | Pérez      | Juan   | ext101    | juan.perez@cye.com      | OF001      |     NULL | Gerente General                | Administración   |             1 |
-|  35556668 | Sánchez    | Carlos | ext106    | carlos.sanchez@cye.com  | OF006      |  2455889 | Contador                       | Contabilidad     |             1 |
-|  35559999 | López      | Pedro  | ext103    | pedro.lopez@cye.com     | OF003      |  8821459 | Gerente de Ventas              | Comercial        |             1 |
+|  35557869 | López      | Pedro  | ext103    | pedro.lopez@cye.com     | OF003      |  8821459 | Gerente de Ventas              | Comercial        |             1 |
+|  37899696 | Sánchez    | Carlos | ext106    | carlos.sanchez@cye.com  | OF006      |  2455889 | Contador                       | Contabilidad     |             1 |
+|  82231155 | Ramírez    | Luis   | ext107    | luis.ramirez@cye.com    | OF007      | 35557869 | Asistente de Ventas            | Ventas           |             1 |
 |  82456117 | Martínez   | Ana    | ext104    | ana.martinez@cye.com    | OF004      |  8821459 | Gerente de Logística           | Logística        |             0 |
 +-----------+------------+--------+-----------+-------------------------+------------+----------+--------------------------------+------------------+---------------+
 7 rows in set (0.001 sec)
-
-
