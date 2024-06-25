@@ -357,3 +357,49 @@ MariaDB [Parcial1_problema2]> SELECT * from Autenticacion_de_Datos_de_Usuario;
 |              75 | 2023-06-24 | pgilbert       | Gilbert    | Darién         | publica      |
 +-----------------+------------+----------------+------------+----------------+--------------+
 25 rows in set (0.004 sec)
+
+MariaDB [Parcial1_problema2]> CREATE VIEW Reporte_de_Tipos_de_Pruebas_Activas AS
+    -> SELECT
+    -> r.idUsuario,
+    -> r.idTipodeprueba,
+    -> r.fecha_generacion,
+    -> t.nombre AS nombre_prueba,
+    -> t.categoria_principal
+    -> FROM
+    -> reporte r
+    -> JOIN
+    -> tipos_de_pruebas t ON r.idTipodeprueba = t.idTipodeprueba
+    -> WHERE t.estado = 'activo';
+Query OK, 0 rows affected (0.007 sec)
+
+MariaDB [Parcial1_problema2]> SELECT * FROM Reporte_de_Tipos_de_Pruebas_Activas;
++-----------+----------------+---------------------+------------------------------------------------------+----------------------------------------+
+| idUsuario | idTipodeprueba | fecha_generacion    | nombre_prueba                                        | categoria_principal                    |
++-----------+----------------+---------------------+------------------------------------------------------+----------------------------------------+
+|        27 |             56 | 2023-01-01 08:00:00 | Escaneo de Puertos                                   | Network Penetration Testing            |
+|        28 |             57 | 2023-01-02 09:15:00 | Identificación de Servicios                          | Network Penetration Testing            |
+|        29 |             58 | 2023-01-03 10:30:00 | Enumeración de Usuarios y Recursos                   | Network Penetration Testing            |
+|        30 |             59 | 2023-01-04 11:45:00 | Detección de Firewalls y Filtros                     | Network Penetration Testing            |
+|        31 |             60 | 2023-01-05 13:00:00 | Exploración de Vulnerabilidades en Protocolos        | Network Penetration Testing            |
+|        32 |             61 | 2023-01-06 14:15:00 | Inyección SQL                                        | Web Application Penetration Testing    |
+|        33 |             62 | 2023-01-07 15:30:00 | Cross-Site Scripting (XSS)                           | Web Application Penetration Testing    |
+|        34 |             63 | 2023-01-08 16:45:00 | Cross-Site Request Forgery (CSRF)                    | Web Application Penetration Testing    |
+|        35 |             64 | 2023-01-09 18:00:00 | Vulnerabilidades en la Autenticación y Sesiones      | Web Application Penetration Testing    |
+|        36 |             65 | 2023-01-10 19:15:00 | Exploración de Archivos y Directorios                | Web Application Penetration Testing    |
+|        37 |             66 | 2023-01-11 20:30:00 | Análisis de Almacenamiento Local                     | Mobile Application Penetration Testing |
+|        38 |             67 | 2023-01-12 21:45:00 | Intercepción de Tráfico                              | Mobile Application Penetration Testing |
+|        39 |             68 | 2023-01-13 23:00:00 | Reversión de Ingeniería de Aplicaciones              | Mobile Application Penetration Testing |
+|        40 |             69 | 2023-01-14 08:00:00 | Análisis de Autenticación y Autorización             | Mobile Application Penetration Testing |
+|        41 |             70 | 2023-01-15 09:15:00 | Manipulación de Datos Sensibles                      | Mobile Application Penetration Testing |
+|        42 |             71 | 2023-01-16 10:30:00 | Análisis de Configuración de Punto de Acceso         | Wireless Penetration Testing           |
+|        43 |             72 | 2023-01-17 11:45:00 | Ataques de Fuerza Bruta                              | Wireless Penetration Testing           |
+|        44 |             73 | 2023-01-18 13:00:00 | Sniffing de Tráfico                                  | Wireless Penetration Testing           |
+|        45 |             74 | 2023-01-19 14:15:00 | Ataques de Desautenticación                          | Wireless Penetration Testing           |
+|        46 |             75 | 2023-01-20 15:30:00 | Evaluación de Seguridad de Protocolos Inalámbricos   | Wireless Penetration Testing           |
+|        47 |             76 | 2023-01-21 16:45:00 | Phishing y Spear Phishing                            | Social Engineering Penetration Testing |
+|        48 |             77 | 2023-01-31 18:00:00 | Reconocimiento                                       | Red Team Penetration Testing           |
+|        49 |             78 | 2023-02-01 19:15:00 | Análisis de Vulnerabilidades                         | Red Team Penetration Testing           |
+|        50 |             79 | 2023-02-02 20:30:00 | Explotación                                          | Red Team Penetration Testing           |
+|        51 |             80 | 2023-02-03 21:45:00 | Escalar Privilegios o Post-Explotación               | Red Team Penetration Testing           |
++-----------+----------------+---------------------+------------------------------------------------------+----------------------------------------+
+25 rows in set (0.001 sec)
