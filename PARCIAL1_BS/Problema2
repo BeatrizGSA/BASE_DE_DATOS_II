@@ -55,6 +55,11 @@ MariaDB [Parcial1_problema2]> ALTER TABLE pago
 Query OK, 0 rows affected (0.031 sec)
 Records: 0  Duplicates: 0  Warnings: 0
 
+MariaDB [Parcial1_problema2]> ALTER TABLE pago
+    -> MODIFY fecha_expiracion VARCHAR(7);
+Query OK, 0 rows affected (0.023 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
 MariaDB [Parcial1_problema2]> CREATE TABLE tipos_de_pruebas (
     ->     idTipodeprueba INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
     ->     referencia VARCHAR(50),
@@ -128,32 +133,34 @@ MariaDB [Parcial1_problema2]> INSERT INTO usuario VALUES
     -> (null, 'Jean-David', 'Nau', 'jnau', 'TK6363YZWW865472', 'fL8s0259plP65896', 'ejecutivos', 'exec', 'Chiriquí', 'M', 'Divorciado', 'privada', 'Dolega, calle 7'),
     -> (null, 'Pedro', 'Gilbert', 'pgilbert', 'TK7474ZZYY235611', 'mQ4z0257kjP65896', 'otros', 'misc', 'Darién', 'M', 'Viudo', 'publica', 'La Palma, calle 3');
 
-MariaDB [Parcial1_problema2]> INSERT INTO pago VALUES
-    -> (null, 27, 'visa', '4111111111111111', 'Francis Drake', 123, '2024-12-01', 'visa.jpg'),
-    -> (null, 28, 'mastercard', '5500000000000004', 'Henry Morgan', 234, '2025-11-01', 'mastercard.jpg'),
-    -> (null, 29, 'american express', '340000000000009', 'Edward Teach', 345, '2026-10-01', 'american_express.jpg'),
-    -> (null, 30, 'discover network', '6011000000000004', 'William Kidd', 456, '2024-09-01', 'discover_network.jpg'),
-    -> (null, 31, 'dinners club international', '30000000000004', 'Edward Low', 567, '2025-08-01', 'dinners_club.jpg'),
-    -> (null, 32, 'visa', '4111111111111112', 'Charles Vane', 678, '2026-07-01', 'visa.jpg'),
-    -> (null, 33, 'mastercard', '5500000000000005', 'Samuel Bellamy', 789, '2027-06-01', 'mastercard.jpg'),
-    -> (null, 34, 'american express', '340000000000010', 'Stede Bonnet', 890, '2024-05-01', 'american_express.jpg'),
-    -> (null, 35, 'discover network', '6011000000000005', 'Benjamin Hornigold', 901, '2025-04-01', 'discover_network.jpg'),
-    -> (null, 36, 'dinners club international', '30000000000005', 'Jack Rackham', 112, '2026-03-01', 'dinners_club.jpg'),
-    -> (null, 37, 'visa', '4111111111111113', 'Anne Bonny', 223, '2027-02-01', 'visa.jpg'),
-    -> (null, 38, 'mastercard', '5500000000000006', 'Mary Read', 334, '2024-01-01', 'mastercard.jpg'),
-    -> (null, 39, 'american express', '340000000000011', 'John Hawkins', 445, '2025-12-01', 'american_express.jpg'),
-    -> (null, 40, 'discover network', '6011000000000006', 'Bartholomew Roberts', 556, '2026-11-01', 'discover_network.jpg'),
-    -> (null, 41, 'dinners club international', '30000000000006', 'George Lowther', 667, '2027-10-01', 'dinners_club.jpg'),
-    -> (null, 42, 'visa', '4111111111111114', 'Thomas Tew', 778, '2024-09-01', 'visa.jpg'),
-    -> (null, 43, 'mastercard', '5500000000000007', 'Howell Davis', 889, '2025-08-01', 'mastercard.jpg'),
-    -> (null, 44, 'american express', '340000000000012', 'Laurens de Graaf', 990, '2026-07-01', 'american_express.jpg'),
-    -> (null, 45, 'discover network', '6011000000000007', 'François lOlonnais', 111, '2027-06-01', 'discover_network.jpg'),
-    -> (null, 46, 'dinners club international', '30000000000007', 'Roche Brasiliano', 222, '2024-05-01', 'dinners_club.jpg'),
-    -> (null, 47, 'visa', '4111111111111115', 'Henry Avery', 333, '2025-04-01', 'visa.jpg'),
-    -> (null, 48, 'mastercard', '5500000000000008', 'Christopher Myngs', 444, '2026-03-01', 'mastercard.jpg'),
-    -> (null, 49, 'american express', '340000000000013', 'Thomas Anstis', 555, '2027-02-01', 'american_express.jpg'),
-    -> (null, 50, 'discover network', '6011000000000008', 'Jean-David Nau', 666, '2024-01-01', 'discover_network.jpg'),
-    -> (null, 51, 'dinners club international', '30000000000008', 'Pedro Gilbert', 777, '2025-12-01', 'dinners_club.jpg');
+MariaDB [Parcial1_problema2]> MariaDB [Parcial1_problema2]> INSERT INTO pago VALUES
+    -> (null, 27, 'visa', '4111111111111111', 'Francis Drake', 123, '2024-12', 'visa.jpg'),
+    -> (null, 28, 'mastercard', '5500000000000004', 'Henry Morgan', 234, '2025-11', 'mastercard.jpg'),
+    -> (null, 29, 'american express', '340000000000009', 'Edward Teach', 345, '2026-10', 'american_express.jpg'),
+    -> (null, 30, 'discover network', '6011000000000004', 'William Kidd', 456, '2024-09', 'discover_network.jpg'),
+    -> (null, 31, 'dinners club international', '30000000000004', 'Edward Low', 567, '2025-08', 'dinners_club.jpg'),
+    -> (null, 32, 'visa', '4111111111111112', 'Charles Vane', 678, '2026-07', 'visa.jpg'),
+    -> (null, 33, 'mastercard', '5500000000000005', 'Samuel Bellamy', 789, '2027-06', 'mastercard.jpg'),
+    -> (null, 34, 'american express', '340000000000010', 'Stede Bonnet', 890, '2024-05', 'american_express.jpg'),
+    -> (null, 35, 'discover network', '6011000000000005', 'Benjamin Hornigold', 901, '2025-04', 'discover_network.jpg'),
+    -> (null, 36, 'dinners club international', '30000000000005', 'Jack Rackham', 112, '2026-03', 'dinners_club.jpg'),
+    -> (null, 37, 'visa', '4111111111111113', 'Anne Bonny', 223, '2027-02', 'visa.jpg'),
+    -> (null, 38, 'mastercard', '5500000000000006', 'Mary Read', 334, '2024-01', 'mastercard.jpg'),
+    -> (null, 39, 'american express', '340000000000011', 'John Hawkins', 445, '2025-12', 'american_express.jpg'),
+    -> (null, 40, 'discover network', '6011000000000006', 'Bartholomew Roberts', 556, '2026-11', 'discover_network.jpg'),
+    -> (null, 41, 'dinners club international', '30000000000006', 'George Lowther', 667, '2027-10', 'dinners_club.jpg'),
+    -> (null, 42, 'visa', '4111111111111114', 'Thomas Tew', 778, '2024-09', 'visa.jpg'),
+    -> (null, 43, 'mastercard', '5500000000000007', 'Howell Davis', 889, '2025-08', 'mastercard.jpg'),
+    -> (null, 44, 'american express', '340000000000012', 'Laurens de Graaf', 990, '2026-07', 'american_express.jpg'),
+    -> (null, 45, 'discover network', '6011000000000007', 'François lOlonnais', 111, '2027-06', 'discover_network.jpg'),
+    -> (null, 46, 'dinners club international', '30000000000007', 'Roche Brasiliano', 222, '2024-05', 'dinners_club.jpg'),
+    -> (null, 47, 'visa', '4111111111111115', 'Henry Avery', 333, '2025-04', 'visa.jpg'),
+    -> (null, 48, 'mastercard', '5500000000000008', 'Christopher Myngs', 444, '2026-03', 'mastercard.jpg'),
+    -> (null, 49, 'american express', '340000000000013', 'Thomas Anstis', 555, '2027-02', 'american_express.jpg'),
+    -> (null, 50, 'discover network', '6011000000000008', 'Jean-David Nau', 666, '2024-01', 'discover_network.jpg'),
+    -> (null, 51, 'dinners club international', '30000000000008', 'Pedro Gilbert', 777, '2025-12', 'dinners_club.jpg');
+Query OK, 25 rows affected (0.005 sec)
+Records: 25  Duplicates: 0  Warnings: 0
 Query OK, 25 rows affected (0.003 sec)
 Records: 25  Duplicates: 0  Warnings: 0
 
