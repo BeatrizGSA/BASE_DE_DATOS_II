@@ -133,7 +133,7 @@ MariaDB [Parcial1_problema2]> INSERT INTO usuario VALUES
     -> (null, 'Jean-David', 'Nau', 'jnau', 'TK6363YZWW865472', 'fL8s0259plP65896', 'ejecutivos', 'exec', 'Chiriquí', 'M', 'Divorciado', 'privada', 'Dolega, calle 7'),
     -> (null, 'Pedro', 'Gilbert', 'pgilbert', 'TK7474ZZYY235611', 'mQ4z0257kjP65896', 'otros', 'misc', 'Darién', 'M', 'Viudo', 'publica', 'La Palma, calle 3');
 
-MariaDB [Parcial1_problema2]> MariaDB [Parcial1_problema2]> INSERT INTO pago VALUES
+MariaDB [Parcial1_problema2]> INSERT INTO pago VALUES
     -> (null, 27, 'visa', '4111111111111111', 'Francis Drake', 123, '2024-12', 'visa.jpg'),
     -> (null, 28, 'mastercard', '5500000000000004', 'Henry Morgan', 234, '2025-11', 'mastercard.jpg'),
     -> (null, 29, 'american express', '340000000000009', 'Edward Teach', 345, '2026-10', 'american_express.jpg'),
