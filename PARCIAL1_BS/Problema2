@@ -161,8 +161,6 @@ MariaDB [Parcial1_problema2]> MariaDB [Parcial1_problema2]> INSERT INTO pago VAL
     -> (null, 51, 'dinners club international', '30000000000008', 'Pedro Gilbert', 777, '2025-12', 'dinners_club.jpg');
 Query OK, 25 rows affected (0.005 sec)
 Records: 25  Duplicates: 0  Warnings: 0
-Query OK, 25 rows affected (0.003 sec)
-Records: 25  Duplicates: 0  Warnings: 0
 
 MariaDB [Parcial1_problema2]> INSERT INTO tipos_de_pruebas VALUES
     -> (null, 'TPR-001', 'Escaneo de Puertos', 'Identificación de los puertos abiertos en un sistema para evaluar su seguridad.', '2023-01-01', 'activo', 'Network Penetration Testing'),
