@@ -1,1 +1,448 @@
+Preg. 1 y 2. Creación de Base de Datos tablas Proveedor, Partes y Taller
+CREATE DATABASE tallerautos_vistas;
+USE tallerautos_vistas;
+
+Tabla Proveedor
+CREATE TABLE Proveedor (
+    ID_Proveedor INT AUTO_INCREMENT PRIMARY KEY,
+    Nombre VARCHAR(100) NOT NULL,
+    Status INT NOT NULL,
+    Ciudad VARCHAR(100)
+);
+
+Tabla Partes
+CREATE TABLE Partes (
+    Num_Parte INT AUTO_INCREMENT PRIMARY KEY,
+    Nombre VARCHAR(100) NOT NULL,
+    Color VARCHAR(50),
+    Peso FLOAT, 
+    Precio DECIMAL(10, 2), 
+    Ciudad VARCHAR(100)
+);
+Tabla Taller
+CREATE TABLE Taller (
+    ID_Taller INT AUTO_INCREMENT PRIMARY KEY,
+    Nombre VARCHAR(100) NOT NULL,
+    ID_Proveedor INT,
+    Proveedor VARCHAR(100),
+    Num_Parte INT,
+    Parte_Utilizada VARCHAR(100),
+    Cantidades_Utilizadas INT,
+    Ciudad VARCHAR(100),
+    FOREIGN KEY (ID_Proveedor) REFERENCES Proveedor(ID_Proveedor),
+    FOREIGN KEY (Num_Parte) REFERENCES Partes(Num_Parte)
+);
+
+Insertar Datos en tablas
+INSERT INTO Proveedor (Nombre, Status, Ciudad) VALUES
+('Elizabeth Bennet', 10, 'Londres'),
+('Fitzwilliam Darcy', 10, 'Madrid'),
+('Emma Woodhouse', 20, 'París'),
+('George Knightley', 10, 'Roma'),
+('Elinor Dashwood', 20, 'Lisboa'),
+('Marianne Dashwood', 10, 'Barcelona'),
+('Edward Ferrars', 20, 'Ámsterdam'),
+('Catherine Morland', 10, 'Berlín'),
+('Henry Tilney', 20, 'Viena'),
+('Fanny Price', 10, 'Estocolmo'),
+('Edmund Bertram', 20, 'Bruselas'),
+('Anne Elliot', 10, 'Múnich'),
+('Captain Wentworth', 20, 'Lima'),
+('John Willoughby', 10, 'Buenos Aires'),
+('Charlotte Lucas', 20, 'Ciudad de México'),
+('Colonel Brandon', 10, 'Santiago de Chile'),
+('Lady Catherine', 20, 'Bogotá'),
+('Mr. Collins', 10, 'Quito'),
+('Georgiana Darcy', 20, 'Caracas'),
+('Jane Bennet', 10, 'Rio de Janeiro'),
+('Charles Bingley', 20, 'Lima'),
+('Mary Crawford', 10, 'Montevideo'),
+('Mr. Woodhouse', 20, 'San José'),
+('Lady Susan', 10, 'Panamá'),
+('John Thorpe', 20, 'Bogotá');
+
+Para visualizar Tabla Proveedor
+SELECT * FROM Proveedor;
+# ID_Proveedor	Nombre	Status	Ciudad
+1	Elizabeth Bennet	10	Londres
+2	Fitzwilliam Darcy	10	Madrid
+3	Emma Woodhouse	20	París
+4	George Knightley	10	Roma
+5	Elinor Dashwood	20	Lisboa
+6	Marianne Dashwood	10	Barcelona
+7	Edward Ferrars	20	Ámsterdam
+8	Catherine Morland	10	Berlín
+9	Henry Tilney	20	Viena
+10	Fanny Price	10	Estocolmo
+11	Edmund Bertram	20	Bruselas
+12	Anne Elliot	10	Múnich
+13	Captain Wentworth	20	Lima
+14	John Willoughby	10	Buenos Aires
+15	Charlotte Lucas	20	Ciudad de México
+16	Colonel Brandon	10	Santiago de Chile
+17	Lady Catherine	20	Bogotá
+18	Mr. Collins	10	Quito
+19	Georgiana Darcy	20	Caracas
+20	Jane Bennet	10	Rio de Janeiro
+21	Charles Bingley	20	Lima
+22	Mary Crawford	10	Montevideo
+23	Mr. Woodhouse	20	San José
+24	Lady Susan	10	Panamá
+25	John Thorpe	20	Bogotá
+-------------------------------------------------------------------------------------------------------------------------
+INSERT INTO Partes (Nombre, Color, Peso, Precio, Ciudad) VALUES
+('Perno A', 'Negro', 16.5, 5.75, 'Londres'),
+('Tornillo B', 'Plateado', 12.0, 3.45, 'Madrid'),
+('Tuerca C', 'Azul', 8.5, 1.25, 'Roma'),
+('Arandela D', 'Rojo', 10.0, 0.75, 'Barcelona'),
+('Rivet E', 'Verde', 15.2, 2.50, 'Madrid'),
+('Perno F', 'Negro', 17.0, 6.00, 'Londres'),
+('Tornillo G', 'Plateado', 13.5, 3.90, 'Madrid'),
+('Tuerca H', 'Azul', 9.0, 1.50, 'Roma'),
+('Arandela I', 'Rojo', 11.0, 0.85, 'Barcelona'),
+('Rivet J', 'Verde', 16.0, 2.75, 'Madrid'),
+('Perno K', 'Negro', 18.0, 6.25, 'Londres'),
+('Tornillo L', 'Plateado', 14.0, 4.00, 'Madrid'),
+('Tuerca M', 'Azul', 9.5, 1.75, 'Roma'),
+('Arandela N', 'Rojo', 12.0, 1.00, 'Barcelona'),
+('Rivet O', 'Verde', 17.0, 3.00, 'Madrid'),
+('Perno P', 'Negro', 19.0, 6.50, 'Londres'),
+('Tornillo Q', 'Plateado', 15.0, 4.20, 'Madrid'),
+('Tuerca R', 'Azul', 10.0, 2.00, 'Roma'),
+('Arandela S', 'Rojo', 13.0, 1.25, 'Barcelona'),
+('Rivet T', 'Verde', 18.0, 3.25, 'Madrid'),
+('Perno U', 'Negro', 20.0, 6.75, 'Londres'),
+('Tornillo V', 'Plateado', 16.0, 4.50, 'Madrid'),
+('Tuerca W', 'Azul', 10.5, 2.25, 'Roma'),
+('Arandela X', 'Rojo', 14.0, 1.50, 'Barcelona'),
+('Rivet Y', 'Verde', 19.0, 3.50, 'Madrid'),
+('Perno Z', 'Negro', 21.0, 7.00, 'Londres');
+
+Para visualizar Tabla Partes
+SELECT * FROM Partes;
+# Num_Parte	Nombre	Color	Peso	Precio	Ciudad
+1	Perno A	Negro	16.5	5.75	Londres
+2	Tornillo B	Plateado	12	3.45	Madrid
+3	Tuerca C	Azul	8.5	1.25	Roma
+4	Arandela D	Rojo	10	0.75	Barcelona
+5	Rivet E	Verde	15.2	2.50	Madrid
+6	Perno F	Negro	17	6.00	Londres
+7	Tornillo G	Plateado	13.5	3.90	Madrid
+8	Tuerca H	Azul	9	1.50	Roma
+9	Arandela I	Rojo	11	0.85	Barcelona
+10	Rivet J	Verde	16	2.75	Madrid
+11	Perno K	Negro	18	6.25	Londres
+12	Tornillo L	Plateado	14	4.00	Madrid
+13	Tuerca M	Azul	9.5	1.75	Roma
+14	Arandela N	Rojo	12	1.00	Barcelona
+15	Rivet O	Verde	17	3.00	Madrid
+16	Perno P	Negro	19	6.50	Londres
+17	Tornillo Q	Plateado	15	4.20	Madrid
+18	Tuerca R	Azul	10	2.00	Roma
+19	Arandela S	Rojo	13	1.25	Barcelona
+20	Rivet T	Verde	18	3.25	Madrid
+21	Perno U	Negro	20	6.75	Londres
+22	Tornillo V	Plateado	16	4.50	Madrid
+23	Tuerca W	Azul	10.5	2.25	Roma
+24	Arandela X	Rojo	14	1.50	Barcelona
+25	Rivet Y	Verde	19	3.50	Madrid
+26	Perno Z	Negro	21	7.00	Londres
+--------------------------------------------------------------------------------------------------------------
+INSERT INTO Taller (Nombre, ID_Proveedor, Proveedor, Num_Parte, Parte_Utilizada, Cantidades_Utilizadas, Ciudad) VALUES
+('Magic', 1, 'Elizabeth Bennet', 1, 'Perno A', 50, 'Londres'),
+('Wonder', 2, 'Fitzwilliam Darcy', 2, 'Tornillo B', 60, 'Madrid'),
+('Dream', 3, 'Emma Woodhouse', 3, 'Tuerca C', 55, 'París'),
+('Fantasy', 4, 'George Knightley', 4, 'Arandela D', 70, 'Roma'),
+('Oasis', 5, 'Elinor Dashwood', 5, 'Rivet E', 80, 'Lisboa'),
+('Anthem', 6, 'Marianne Dashwood', 6, 'Perno F', 90, 'Barcelona'),
+('Quantum', 7, 'Edward Ferrars', 7, 'Tornillo G', 65, 'Ámsterdam'),
+('Spectrum', 8, 'Catherine Morland', 8, 'Tuerca H', 75, 'Berlín'),
+('Harmony', 9, 'Henry Tilney', 9, 'Arandela I', 85, 'Viena'),
+('Freedom', 10, 'Fanny Price', 10, 'Rivet J', 95, 'Estocolmo'),
+('Magic II', 11, 'Edmund Bertram', 11, 'Perno K', 40, 'Bruselas'),
+('Wonder II', 12, 'Anne Elliot', 12, 'Tornillo L', 50, 'Múnich'),
+('Dream II', 13, 'Captain Wentworth', 13, 'Tuerca M', 60, 'Lima'),
+('Fantasy II', 14, 'John Willoughby', 14, 'Arandela N', 70, 'Buenos Aires'),
+('Oasis II', 15, 'Charlotte Lucas', 15, 'Rivet O', 80, 'Ciudad de México'),
+('Anthem II', 16, 'Colonel Brandon', 16, 'Perno P', 90, 'Santiago de Chile'),
+('Quantum II', 17, 'Lady Catherine', 17, 'Tornillo Q', 65, 'Bogotá'),
+('Spectrum II', 18, 'Mr. Collins', 18, 'Tuerca R', 75, 'Quito'),
+('Harmony II', 19, 'Georgiana Darcy', 19, 'Arandela S', 85, 'Caracas'),
+('Freedom II', 20, 'Jane Bennet', 20, 'Rivet T', 95, 'Rio de Janeiro'),
+('Magic III', 21, 'Charles Bingley', 21, 'Perno U', 50, 'Lima'),
+('Wonder III', 22, 'Mary Crawford', 22, 'Tornillo V', 60, 'Montevideo'),
+('Dream III', 23, 'Mr. Woodhouse', 23, 'Tuerca W', 55, 'San José'),
+('Fantasy III', 24, 'Lady Susan', 24, 'Arandela X', 70, 'Panamá'),
+('Oasis III', 25, 'John Thorpe', 25, 'Rivet Y', 80, 'Bogotá');
+Para visualizar Tabla Taller
+SELECT * FROM Taller;
+# ID_Taller	Nombre	ID_Proveedor	Proveedor	Num_Parte	Parte_Utilizada	Cantidades_Utilizadas	Ciudad
+1	Magic	1	Elizabeth Bennet	1	Perno A	50	Londres
+2	Wonder	2	Fitzwilliam Darcy	2	Tornillo B	60	Madrid
+3	Dream	3	Emma Woodhouse	3	Tuerca C	55	París
+4	Fantasy	4	George Knightley	4	Arandela D	70	Roma
+5	Oasis	5	Elinor Dashwood	5	Rivet E	80	Lisboa
+6	Anthem	6	Marianne Dashwood	6	Perno F	90	Barcelona
+7	Quantum	7	Edward Ferrars	7	Tornillo G	65	Ámsterdam
+8	Spectrum	8	Catherine Morland	8	Tuerca H	75	Berlín
+9	Harmony	9	Henry Tilney	9	Arandela I	85	Viena
+10	Freedom	10	Fanny Price	10	Rivet J	95	Estocolmo
+11	Magic II	11	Edmund Bertram	11	Perno K	40	Bruselas
+12	Wonder II	12	Anne Elliot	12	Tornillo L	50	Múnich
+13	Dream II	13	Captain Wentworth	13	Tuerca M	60	Lima
+14	Fantasy II	14	John Willoughby	14	Arandela N	70	Buenos Aires
+15	Oasis II	15	Charlotte Lucas	15	Rivet O	80	Ciudad de México
+16	Anthem II	16	Colonel Brandon	16	Perno P	90	Santiago de Chile
+17	Quantum II	17	Lady Catherine	17	Tornillo Q	65	Bogotá
+18	Spectrum II	18	Mr. Collins	18	Tuerca R	75	Quito
+19	Harmony II	19	Georgiana Darcy	19	Arandela S	85	Caracas
+20	Freedom II	20	Jane Bennet	20	Rivet T	95	Rio de Janeiro
+21	Magic III	21	Charles Bingley	21	Perno U	50	Lima
+22	Wonder III	22	Mary Crawford	22	Tornillo V	60	Montevideo
+23	Dream III	23	Mr. Woodhouse	23	Tuerca W	55	San José
+24	Fantasy III	24	Lady Susan	24	Arandela X	70	Panamá
+25	Oasis III	25	John Thorpe	25	Rivet Y	80	Bogotá
+-------------------------------------------------------------------------
+Preg. 3. Procedimiento Almacenados
+Parámetro de Entrada
+
+DELIMITER //
+
+CREATE PROCEDURE GetTalleresByParte(IN parte_id INT)
+BEGIN
+    SELECT * FROM Taller
+    WHERE Num_Parte = parte_id;
+END //
+
+DELIMITER ;
+
+
+
+Uso del Procedimiento
+CALL GetTalleresByParte(5);
+# ID_Taller	Nombre	ID_Proveedor	Proveedor	Num_Parte	Parte_Utilizada	Cantidades_Utilizadas	Ciudad
+5	Oasis	5	Elinor Dashwood	5	Rivet E	80	Lisboa
+
+CALL GetTalleresByParte(10);
+# ID_Taller	Nombre	ID_Proveedor	Proveedor	Num_Parte	Parte_Utilizada	Cantidades_Utilizadas	Ciudad
+10	Freedom	10	Fanny Price	10	Rivet J	95	Estocolmo
+
+Sin Parámetro de Entrada
+DELIMITER //
+
+CREATE PROCEDURE GetActiveProveedores()
+BEGIN
+    SELECT * FROM Proveedor
+    WHERE Status = '10'; 
+END //
+
+DELIMITER ;
+
+Uso del Procedimiento
+CALL GetActiveProveedores();
+# ID_Proveedor	Nombre	Status	Ciudad
+1	Elizabeth Bennet	10	Londres
+2	Fitzwilliam Darcy	10	Madrid
+4	George Knightley	10	Roma
+6	Marianne Dashwood	10	Barcelona
+8	Catherine Morland	10	Berlín
+10	Fanny Price	10	Estocolmo
+12	Anne Elliot	10	Múnich
+14	John Willoughby	10	Buenos Aires
+16	Colonel Brandon	10	Santiago de Chile
+18	Mr. Collins	10	Quito
+20	Jane Bennet	10	Rio de Janeiro
+22	Mary Crawford	10	Montevideo
+24	Lady Susan	10	Panamá
+---------------------------------------------------------------------------------------
+Preg. 4. Reportes (Vistas)
+Reporte de Partes Utilizadas en el taller
+CREATE VIEW PartesPorTaller AS
+SELECT
+    t.Nombre AS Nombre_Taller,
+    p.Nombre AS Nombre_Parte,
+    t.Cantidades_Utilizadas
+FROM
+    Taller t
+JOIN
+    Partes p ON t.Num_Parte = p.Num_Parte;
+Para visualizar reporte de Partes Utilizadas en el taller
+SELECT * FROM PartesPorTaller;
+# Nombre_Taller	Nombre_Parte	Cantidades_Utilizadas
+Magic	Perno A	 50
+Wonder	Tornillo B	60
+Dream	Tuerca C	55
+Fantasy	Arandela D	70
+Oasis	Rivet E	80
+Anthem	Perno F	90
+Quantum	Tornillo G	65
+Spectrum	Tuerca H	75
+Harmony	Arandela I	85
+Freedom	Rivet J	95
+Magic II	Perno K	40
+Wonder II	Tornillo L	50
+Dream II	Tuerca M	60
+Fantasy II	Arandela N	70
+Oasis II	Rivet O	80
+Anthem II	Perno P	90
+Quantum II	Tornillo Q	65
+Spectrum II	Tuerca R	75
+Harmony II	Arandela S	85
+Freedom II	Rivet T	95
+Magic III	Perno U	50
+Wonder III	Tornillo V	60
+Dream III	Tuerca W	55
+Fantasy III	Arandela X	70
+Oasis III	Rivet Y	80
+
+Reporte de Proveedores por Ciudad y Cantidad Total de Partes Utilizadas
+CREATE VIEW ProveedoresPorCiudad AS
+SELECT
+    p.Ciudad AS Ciudad_Proveedor,
+    p.Nombre AS Nombre_Proveedor,
+    SUM(t.Cantidades_Utilizadas) AS Total_Partes_Utilizadas
+FROM
+    Proveedor p
+JOIN
+    Taller t ON p.ID_Proveedor = t.ID_Proveedor
+GROUP BY
+    p.Ciudad, p.Nombre;
+Para visualizar Reporte de Proveedores por Ciudad y Cantidad Total de Partes Utilizadas
+SELECT * FROM ProveedoresPorCiudad;
+# Ciudad_Proveedor	Nombre_Proveedor	Total_Partes_Utilizadas
+Londres	Elizabeth Bennet	50
+Madrid	Fitzwilliam Darcy	60
+París	Emma Woodhouse	55
+Roma	George Knightley	70
+Lisboa	Elinor Dashwood	80
+Barcelona	Marianne Dashwood	90
+Ámsterdam	Edward Ferrars	65
+Berlín	Catherine Morland	75
+Viena	Henry Tilney	85
+Estocolmo	Fanny Price	95
+Bruselas	Edmund Bertram	40
+Múnich	Anne Elliot	50
+Lima	Captain Wentworth	60
+Buenos Aires	John Willoughby	70
+Ciudad de México	Charlotte Lucas	80
+Santiago de Chile	Colonel Brandon	90
+Bogotá	Lady Catherine	65
+Quito	Mr. Collins	75
+Caracas	Georgiana Darcy	85
+Rio de Janeiro	Jane Bennet	95
+Lima	Charles Bingley	50
+Montevideo	Mary Crawford	60
+San José	Mr. Woodhouse	55
+Panamá	Lady Susan	70
+Bogotá	John Thorpe	80
+
+Reporte de Proveedores Activos y la Cantidad Total de Partes Utilizadas
+CREATE VIEW ProveedoresYPartesUtilizadas AS
+SELECT
+    p.ID_Proveedor,
+    p.Nombre AS Nombre_Proveedor,
+    SUM(t.Cantidades_Utilizadas) AS Total_Partes_Utilizadas
+FROM
+    Proveedor p
+JOIN
+    Taller t ON p.ID_Proveedor = t.ID_Proveedor
+WHERE
+    p.Status = '10'  -- Considerando '10' como activo
+GROUP BY
+    p.ID_Proveedor, p.Nombre;
+Para visualizar Reporte de Proveedores Activos y la Cantidad Total de Partes Utilizadas
+SELECT * FROM ProveedoresYPartesUtilizadas;
+# ID_Proveedor	Nombre_Proveedor	Total_Partes_Utilizadas
+1	Elizabeth Bennet	50
+2	Fitzwilliam Darcy	60
+4	George Knightley	70
+6	Marianne Dashwood	90
+8	Catherine Morland	75
+10	Fanny Price	95
+12	Anne Elliot	50
+14	John Willoughby	70
+16	Colonel Brandon	90
+18	Mr. Collins	75
+20	Jane Bennet	95
+22	Mary Crawford	60
+24	Lady Susan	70
+
+Reporte de Proveedores y sus Partes Asociadas
+CREATE VIEW ProveedoresYPartes AS
+SELECT
+    p.Nombre AS Nombre_Proveedor,
+    t.Parte_Utilizada,
+    p2.Nombre AS Nombre_Parte
+FROM
+    Proveedor p
+JOIN
+    Taller t ON p.ID_Proveedor = t.ID_Proveedor
+JOIN
+    Partes p2 ON t.Num_Parte = p2.Num_Parte;
+Para visualizar Reporte de Proveedores y sus Partes Asociadas
+SELECT * FROM ProveedoresYPartes;
+# Nombre_Proveedor	Parte_Utilizada	Nombre_Parte
+Elizabeth Bennet	Perno A	Perno A
+Fitzwilliam Darcy	Tornillo B	Tornillo B
+Emma Woodhouse	Tuerca C	Tuerca C
+George Knightley	Arandela D	Arandela D
+Elinor Dashwood	Rivet E	Rivet E
+Marianne Dashwood	Perno F	Perno F
+Edward Ferrars	Tornillo G	Tornillo G
+Catherine Morland	Tuerca H	Tuerca H
+Henry Tilney	Arandela I	Arandela I
+Fanny Price	Rivet J	Rivet J
+Edmund Bertram	Perno K	Perno K
+Anne Elliot	Tornillo L	Tornillo L
+Captain Wentworth	Tuerca M	Tuerca M
+John Willoughby	Arandela N	Arandela N
+Charlotte Lucas	Rivet O	Rivet O
+Colonel Brandon	Perno P	Perno P
+Lady Catherine	Tornillo Q	Tornillo Q
+Mr. Collins	Tuerca R	Tuerca R
+Georgiana Darcy	Arandela S	Arandela S
+Jane Bennet	Rivet T	Rivet T
+Charles Bingley	Perno U	Perno U
+Mary Crawford	Tornillo V	Tornillo V
+Mr. Woodhouse	Tuerca W	Tuerca W
+Lady Susan	Arandela X	Arandela X
+John Thorpe	Rivet Y	Rivet Y
+
+Reporte de Talleres y el Número Total de Partes Utilizadas
+CREATE VIEW TalleresYTotalPartes AS
+SELECT
+    Nombre AS Nombre_Taller,
+    SUM(Cantidades_Utilizadas) AS Total_Partes_Utilizadas
+FROM
+    Taller
+GROUP BY
+    Nombre;
+Para visualizar Reporte de Talleres y el Número Total de Partes Utilizadas
+SELECT * FROM TalleresYTotalPartes;
+# Nombre_Taller	Total_Partes_Utilizadas
+Magic	50
+Wonder	60
+Dream	55
+Fantasy	70
+Oasis	80
+Anthem	90
+Quantum	65
+Spectrum	75
+Harmony	85
+Freedom	95
+Magic II	40
+Wonder II	50
+Dream II	60
+Fantasy II	70
+Oasis II	80
+Anthem II	90
+Quantum II	65
+Spectrum II	75
+Harmony II	85
+Freedom II	95
+Magic III	50
+Wonder III	60
+Dream III	55
+Fantasy III	70
+Oasis III	80
 
